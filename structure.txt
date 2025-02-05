@@ -7,8 +7,6 @@ gridstatus.php
 gridstatusrss.php
 guide.php
 help.php
-images
-include
 index.php
 maptile.php
 partner.php
