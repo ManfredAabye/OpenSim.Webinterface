@@ -10,6 +10,7 @@ help.php
 images
 include
 index.php
+maptile.php
 partner.php
 passwordreset.php
 registeruser.php
