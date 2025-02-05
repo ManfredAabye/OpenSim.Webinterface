@@ -17,9 +17,9 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ---
 
-# Informationen
+## Informationen
 
-## Seiten
+### Seiten
 * aboutinformation.php - Informationen und Besitzerdaten.
 * avatarpicker.php - Einen Avatar auswählen.
 * destinations - Besondere Zielorte des Grids.
@@ -36,7 +36,7 @@ Economy support is no longer required, but I would like to provide a small overv
 * searchservice.php - Suchfunktion für Orte oder mehr.
 * welcomesplashpage.php - Die Welcome Splash Seite mit Informationen zum Grid.
 
-## destinations - Bilder für die Guide/Destinations.
+### destinations - Bilder für die Guide/Destinations.
 * destinations/Infopunkt1.png
 * destinations/Infopunkt2.png
 * destinations/Infopunkt3.png
@@ -47,7 +47,7 @@ Economy support is no longer required, but I would like to provide a small overv
 * destinations/Infopunkt8.png
 * destinations/Infopunkt9.png
 
-## images - welcomesplashpage Hintergrundbilder.
+### images - welcomesplashpage Hintergrundbilder.
 * images/1_001.png
 * images/2_001.png
 * images/3_001.png
@@ -58,7 +58,7 @@ Economy support is no longer required, but I would like to provide a small overv
 * images/8_001.png
 * images/9_001.png
 
-## include - Diverse Einstellungen für das Grid und das Webinterface.
+### include - Diverse Einstellungen für das Grid und das Webinterface.
 * include/config.php
 * include/destinations.json
 * include/favicon.ico
@@ -68,7 +68,7 @@ Economy support is no longer required, but I would like to provide a small overv
 * include/index.html
 * include/Metavers150.png
 
-## pics - Diverse Bilder und Icons
+### pics - Diverse Bilder und Icons
 * pics/background.jpg
 * pics/index.html
 * pics/logo.png
