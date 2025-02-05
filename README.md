@@ -16,6 +16,62 @@ The web interface is designed to support the pages listed in Robust.ini.
 Economy support is no longer required, but I would like to provide a small overview of the user's account.
 
 ---
+
+# Informationen
+
+* aboutinformation.php - Informationen und Besitzerdaten.
+* avatarpicker.php - Einen Avatar auswählen.
+* destinations - Besondere Zielorte des Grids.
+* economycashbook.php - Ein kleines Kassenbuch für einnahmen ausgaben über den MoneyServer.
+* gridstatus.php - Der Gridstatus des Grids.
+* gridstatusrss.php - RSS feeds über den Gridstatus des Grids.
+* guide.php - Besondere Zielorte des Grids der über den Viewer abgerufen wird.
+* help.php - Hilfestellung wie man ins Grid kommt etc.
+* index.php - Eine Hilfsseite mit der man die einzelnen Seiten aufrufen kann.
+* maptile.php - Eine Karte aufrufen.
+* partner.php - Partnerschaften mit anderen Usern eingehen oder beenden.
+* passwordreset.php - Ein neues Passwort einstellen.
+* registeruser.php - Eine Benutzerregistration.
+* searchservice.php - Suchfunktion für Orte oder mehr.
+* welcomesplashpage.php - Die Welcome Splash Seite mit Informationen zum Grid.
+
+* destinations/Infopunkt1.png - Bilder für die Guide/Destinations.
+* destinations/Infopunkt2.png
+* destinations/Infopunkt3.png
+* destinations/Infopunkt4.png
+* destinations/Infopunkt5.png
+* destinations/Infopunkt6.png
+* destinations/Infopunkt7.png
+* destinations/Infopunkt8.png
+* destinations/Infopunkt9.png
+
+* images/1_001.png - welcomesplashpage Hintergrundbilder.
+* images/2_001.png
+* images/3_001.png
+* images/4_001.png
+* images/5_001.png
+* images/6_001.png
+* images/7_001.png
+* images/8_001.png
+* images/9_001.png
+
+* include/config.php - Diverse Einstellungen für das Grid und das Webinterface.
+* include/destinations.json
+* include/favicon.ico
+* include/favicon.png
+* include/footer.php
+* include/header.php
+* include/index.html
+* include/Metavers150.png
+
+* pics/background.jpg - Diverse Bilder und Icons
+* pics/index.html
+* pics/logo.png
+* pics/mhpann.png
+* pics/transparent.png
+
+---
+
 ## TODO
 
 * MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php" ; **Funktioniert noch nicht es gibt eine Platzhalter Datei.**
