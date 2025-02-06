@@ -15,14 +15,12 @@
             background-position: center;
             height: 100vh;
             width: 100vw;
-            opacity: <?php echo defined('BACKGROUND_OPACITY') ? BACKGROUND_OPACITY : 1; ?>;
-        }
+            opacity: <?php echo defined('BACKGROUND_OPACITY') ? BACKGROUND_OPACITY : 1; ?>;        }
         header {
             background-color: <?php echo HEADER_COLOR; ?>;
             padding: 10px;
             text-align: center;
-            color: white;
-        }
+            color: white;        }
         footer {
             background-color: <?php echo FOOTER_COLOR; ?>;
             padding: 10px;
@@ -30,13 +28,11 @@
             color: white;
             position: fixed;
             width: 100%;
-            bottom: 0;
-        }
+            bottom: 0;        }
         nav a {
             margin: 0 10px;
             color: white;
-            text-decoration: none;
-        }
+            text-decoration: none;        }
         .container {
             background-image: url(<?php echo FOREGROUND_IMAGE; ?>);
             background-size: 50%;
@@ -44,11 +40,10 @@
             background-position: center;
             padding: 20px;
             border-radius: 8px;
-            opacity: <?php echo defined('FOREGROUND_OPACITY') ? FOREGROUND_OPACITY : 1; ?>;
-        }
+            opacity: <?php echo defined('FOREGROUND_OPACITY') ? FOREGROUND_OPACITY : 1; ?>;        }
     </style>
 </head>
 <body>
 <header>
-    <h1>Welcome to Our Grid</h1>
+    <h1>Welcome to <?php echo SITE_NAME; ?></h1>
 </header>
