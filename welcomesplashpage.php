@@ -7,108 +7,31 @@ include "include/config.php";
 
 <head>
     <meta charset="UTF-8">
+    <!-- Schriftarten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Simbole -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 
     <style>
-        #main {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        #stats1 {
-            position: absolute;
-            right: 10px;
-            top: 23px;
-            text-align: left;
-            height: 90px;
-            width: 250px;
-            z-index: 3;
-            color: <?php echo PRIMARY_COLOR_LOGO; ?>;
-        }
-
-        fieldset {
-            padding: 10px;
-            border-radius: 8px;
-            -webkit-border-radius: 8px;
-            -moz-border-radius: 8px;
-        }
-
-        legend {
-            color: #FFF;
-        }
-
-        fieldset.white,
-        fieldset.white2 {
-            padding: 5px;
-            height: 96%;
-            border: 3px solid <?php echo LINK_COLOR; ?>;
-        }
-
-        .PictureSlider {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-
-        .PictureSlider.active {
-            opacity: 1;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-        }
-
-        #background1 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .wspbody {
-            margin: 0px;
-            font-family: <?php echo FONT_FAMILY; ?>;
-            font-size: <?php echo BASE_FONT_SIZE; ?>;
-            background: <?php echo SECONDARY_COLOR; ?>;
-        }
-
-        p {
-            margin: 0px;
-            font-family: <?php echo FONT_FAMILY; ?>;
-            color: <?php echo PRIMARY_COLOR_LOGO; ?>;
-            font-size: <?php echo TITLE_FONT_SIZE; ?>;
-            font-weight: bold;
-        }
-
-        a {
-            color: <?php echo LINK_COLOR; ?>;
-        }
-
-        a:hover {
-            color: <?php echo LINK_HOVER_COLOR; ?>;
-        }
-
-        #stats2 {
-            font-family: <?php echo FONT_FAMILY; ?>;
-            font-size: <?php echo STATS_FONT_SIZE; ?>;
-        }
+        #main {width: 100%;height: 100%;position: relative;z-index: 1;}
+        #stats1 {position: absolute;right: 10px;top: 23px;text-align: left;height: 90px;width: 250px;z-index: 3;color: <?php echo PRIMARY_COLOR_LOGO; ?>;}
+        fieldset {padding: 10px;border-radius: 8px;-webkit-border-radius: 8px;-moz-border-radius: 8px;}
+        legend {color: #FFF;}
+        fieldset.white,fieldset.white2 {padding: 5px;height: 96%;border: 3px solid <?php echo LINK_COLOR; ?>;}
+        .PictureSlider {position: absolute;width: 100%;height: 100%;opacity: 0;transition: opacity 2s ease-in-out;}
+        .PictureSlider.active {opacity: 1;}
+        html,body {margin: 0;padding: 0;overflow: hidden;width: 100%;height: 100%;}
+        #background1 {position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;margin: 0;padding: 0;}
+        ul {list-style: none;padding: 0;margin: 0;}
+        .wspbody {margin: 0px;font-family: <?php echo FONT_FAMILY; ?>;font-size: <?php echo BASE_FONT_SIZE; ?>;background: <?php echo SECONDARY_COLOR; ?>;}
+        p {margin: 0px;font-family: <?php echo FONT_FAMILY; ?>;color: <?php echo PRIMARY_COLOR_LOGO; ?>;font-size: <?php echo TITLE_FONT_SIZE; ?>;font-weight: bold;}
+        a {color: <?php echo LINK_COLOR; ?>;}
+        a:hover {color: <?php echo LINK_HOVER_COLOR; ?>;}
+        #stats2 {font-family: <?php echo FONT_FAMILY_STATS; ?>;font-size: <?php echo STATS_FONT_SIZE; ?>;}
+        .pacifico-regular {font-family: "Pacifico", serif; font-weight: 400; font-style: normal;}
+        .material-symbols-outlined {font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }    
     </style>
 </head>
 
@@ -148,13 +71,13 @@ include "include/config.php";
 
                 <?php if (TEXT_ON === 'ON') { ?>
                   <div style="
-                      width: <?php echo WELCOME_TEXT_WIDTH; ?>;
-                      height: <?php echo WELCOME_TEXT_HEIGHT; ?>;
-                      color: <?php echo WELCOME_TEXT_COLOR; ?>;
-                      text-align: <?php echo WELCOME_TEXT_ALIGN; ?>;
-                      font-size: <?php echo WELCOME_TEXT_FONT_SIZE; ?>;
-                      margin: 0; /* Kein automatisches Zentrieren */
-                      display: block; /* Sicherstellen, dass es sich wie ein Block verhält */
+                    width: <?php echo WELCOME_TEXT_WIDTH; ?>;
+                    height: <?php echo WELCOME_TEXT_HEIGHT; ?>;
+                    color: <?php echo WELCOME_TEXT_COLOR; ?>;
+                    text-align: <?php echo WELCOME_TEXT_ALIGN; ?>;
+                    font-size: <?php echo WELCOME_TEXT_FONT_SIZE; ?>;
+                    margin: 0; /* Kein automatisches Zentrieren */
+                    display: block; /* Sicherstellen, dass es sich wie ein Block verhält */
                   ">
                       <?php echo WELCOME_TEXT; ?>
                   </div>
@@ -185,7 +108,7 @@ include "include/config.php";
 
             $result5 = mysqli_query($con, "SELECT COUNT(*) FROM GridUser");
             list($totalGridAccounts) = mysqli_fetch_row($result5);
-
+            
             echo "<div id='stats2'>";
             echo "<b><font color=#00FF00>Nutzer im Grid</font>: " . $totalUsers . "<br>";
             echo "<font color=#00FF00>Regionen</font>: " . $totalRegions . "<br>";

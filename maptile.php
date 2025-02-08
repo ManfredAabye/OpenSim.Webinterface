@@ -107,7 +107,7 @@ while ($row = mysqli_fetch_assoc($regions)) {
     <div id="freeRegionCard" class="card">
         <p>Diese Region ist frei und Sie können die Konfigurationen vornehmen.</p>
         <p id="free-region-coordinates"></p>
-        <p>____________ Config Example _____________</p>
+        <p>____________Beispiel_____________</p>
         <p>[Region_<span id="free-region-x"></span>_<span id="free-region-y"></span>]</p>
         <p>Location: <span id="free-region-x-location"></span>,<span id="free-region-y-location"></span></p>
         <p>RegionUUID: <?php echo uuid4(); ?></p>

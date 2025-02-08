@@ -13,6 +13,8 @@
         <li><a href="gridstatusrss.php">GridStatusRSS Page</a></li>
         <li><a href="guide.php">Destination Guide Page</a></li>
         <li><a href="help.php">Help Page</a></li>
+        <li><a href="iarservice.php">IAR Service Page</a></li>
+        <li><a href="listinventar.php">List Inventar Page</a></li>      
         <li><a href="maptile.php">Maptile Page</a></li>
         <li><a href="partner.php">Partner Page</a></li>
         <li><a href="passwordreset.php">Password Page</a></li>

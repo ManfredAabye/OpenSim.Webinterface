@@ -29,7 +29,8 @@ define('PRIMARY_COLOR', '#000000'); // Allgemeine Schriftfarbe Schwarz
 define('SECONDARY_COLOR', '#F5F5F5'); // Hintergrundfarbe
 define('HEADER_COLOR', '#00BFFF'); // Farbe des Headers
 define('FOOTER_COLOR', '#00BFFF'); // Farbe des Footers
-define('FONT_FAMILY', 'Arial, Verdana, sans-serif');
+define('FONT_FAMILY_STATS', 'Arial, Verdana, sans-serif');
+define('FONT_FAMILY', 'Pacifico, normal, serif');
 
 // Schriftgrößen
 define('BASE_FONT_SIZE', '26px'); // Standardgröße für Text
@@ -66,5 +67,18 @@ define('WELCOME_TEXT_FONT_SIZE', '24px');  // Schriftgröße des Textes
 define('SLIDESHOW_FOLDER', './images'); // Verzeichnis für die Bilder
 define('IMAGE_SIZE', 'width:100%;height:100%'); // Größe der Bilder (100% für Vollbild)
 define('SLIDESHOW_DELAY', 9000); // Zeit zwischen Bildern (in ms, 9000 = 9 Sekunden)
-?>
 
+// Einstellungen für Maptiles
+define('FREI_COLOR', '#0000FF'); // Farbe für freie Koordinaten
+define('BESCHLAGT_COLOR', '#008000'); // Farbe für SingleRegion
+define('VARREGION_COLOR', '#006400'); // Farbe für VarRegion
+define('CENTER_COLOR', '#FF0000'); // Farbe für Zentrum
+define('TILE_SIZE', '25px'); // Größe der Farbfelder
+
+// Zentrum des Grids
+DEFINE('CONF_CENTER_COORD_X', 5100); // X-KOORDINATE DES ZENTRUMS
+DEFINE('CONF_CENTER_COORD_Y', 5100); // Y-KOORDINATE DES ZENTRUMS
+
+DEFINE('MAPS_X', 32); 
+DEFINE('MAPS_Y', 32);
+?>
