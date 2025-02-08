@@ -20,21 +20,23 @@ Economy support is no longer required, but I would like to provide a small overv
 ## Informationen
 
 ### Seiten
-* aboutinformation.php - Informationen und Besitzerdaten.
+* aboutinformation.php - Informationen und Besitzerdaten.  **Funktioniert**
 * avatarpicker.php - Einen Avatar auswählen.
-* destinations - Besondere Zielorte des Grids.
-* economycashbook.php - Ein kleines Kassenbuch für einnahmen ausgaben über den MoneyServer.
-* gridstatus.php - Der Gridstatus des Grids.
+* destinations - Besondere Zielorte des Grids.  **Funktioniert**
+* economycashbook.php - Ein kleines Kassenbuch für einnahmen ausgaben über den MoneyServer. **Funktioniert**
+* gridstatus.php - Der Gridstatus des Grids.  **Funktioniert**
 * gridstatusrss.php - RSS feeds über den Gridstatus des Grids.
-* guide.php - Besondere Zielorte des Grids der über den Viewer abgerufen wird.
-* help.php - Hilfestellung wie man ins Grid kommt etc.
-* index.php - Eine Hilfsseite mit der man die einzelnen Seiten aufrufen kann.
-* maptile.php - Eine Karte aufrufen.
+* guide.php - Besondere Zielorte des Grids der über den Viewer abgerufen wird.  **Funktioniert**
+* help.php - Hilfestellung wie man ins Grid kommt etc.  **Funktioniert**
+* index.php - Eine Hilfsseite mit der man die einzelnen Seiten aufrufen kann.  **Funktioniert**
+* maptile.php - Eine Karte aufrufen.  **Funktioniert**
 * partner.php - Partnerschaften mit anderen Usern eingehen oder beenden.
 * passwordreset.php - Ein neues Passwort einstellen.
 * registeruser.php - Eine Benutzerregistration.
 * searchservice.php - Suchfunktion für Orte oder mehr.
-* welcomesplashpage.php - Die Welcome Splash Seite mit Informationen zum Grid.
+* welcomesplashpage.php - Die Welcome Splash Seite mit Informationen zum Grid.  **Funktioniert**
+* listinventar.php - Listet das Inventar auf.  **Funktioniert**
+* iarservice.php - Inventar Sichern oder IAR hochladen.  **Funktioniert**
 
 ### destinations - Bilder für die Guide/Destinations.
 * destinations/Infopunkt1.png
