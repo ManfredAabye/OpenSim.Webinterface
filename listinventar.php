@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nachname = $_POST['nachname'] ?? '';
 
     // Überprüfen des Passworts
-    if ($input_password === '#45ü18GlmaA32ß') {
+    if ($input_password === '#45218932ß') {
         $_SESSION['authenticated'] = true;
 
         if (!empty($vorname) && !empty($nachname)) {
