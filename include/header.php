@@ -25,12 +25,14 @@
         }
         footer {
             background-color: var(--footer-color);
-            padding: 10px;
+            margin: 0;
+            padding: 0;
             text-align: center;
             color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
+            line-height: 0;
         }
         nav a {
             margin: 0 10px;

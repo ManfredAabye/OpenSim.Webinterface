@@ -5,14 +5,14 @@ include 'include/header.php';
 ?>
 
 <style>
-htmlBody {font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;} 
-main {width: 75%; margin: 2em auto; padding: 2em; background-color: #ffffff; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);} 
+htmlBody {font-family: Arial, sans-serif; background-color: #f4f4f4; color: black; margin: 0; padding: 0;} 
+main {width: 75%; margin: 2em auto; padding: 2em; background-color: #ffffff; color: black; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);} 
 h2 {color: #333;} 
 form label {display: block; margin-bottom: 0.5em; color: #333;} 
 form input[type="text"], form select {width: 100%; padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;} 
 form input[type="submit"] {padding: 5px 20px; background-color: #007BFF; color: #ffffff; border: none; border-radius: 4px; cursor: pointer;} 
 form input[type="submit"]:hover {background-color: #0056b3;} 
-table {width: 100%; border-collapse: collapse; font-size: 0.8em;} 
+table {width: 100%; border-collapse: collapse; font-size: 0.72em;} /* Schriftgröße um 10% reduziert */ 
 table, th, td {border: 1px solid #ccc;} 
 th, td {padding: 8px; text-align: left;}
 </style>
@@ -40,7 +40,7 @@ th, td {padding: 8px; text-align: left;}
         $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
         if ($search_type === 'inventoryitems') {
-            $query = "SELECT assetID, inventoryName, inventoryDescription, creatorID, salePrice, saleType, creationDate, groupID, groupOwned, flags, inventoryID, avatarID FROM inventoryitems WHERE inventoryName LIKE '%$search_query%' OR inventoryDescription LIKE '%$search_query%'";
+            $query = "SELECT assetID, inventoryName, salePrice, avatarID FROM inventoryitems WHERE inventoryName LIKE '%$search_query%' OR inventoryDescription LIKE '%$search_query%'";
         } elseif ($search_type === 'inventoryfolders') {
             $query = "SELECT folderName, type, version, folderID, agentID FROM inventoryfolders WHERE folderName LIKE '%$search_query%'";
         } else {
