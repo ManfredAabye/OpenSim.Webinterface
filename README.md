@@ -94,4 +94,5 @@ Economy support is no longer required, but I would like to provide a small overv
 * partner = ${Const|BaseURL}/webinterface/partner.php ; **Funktioniert**
 * GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php ; **Funktioniert**
 
+Farbspielerei eingefügt.
 ---
