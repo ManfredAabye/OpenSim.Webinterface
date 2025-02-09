@@ -79,11 +79,11 @@ function listinventar($vorname, $nachname, $db_username, $db_password, $db_name)
 ?>
 
 <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; display: flex; flex-direction: column; height: 100vh; }
-    .container { display: flex; flex-direction: column; flex: 1; }
+    body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: black; margin: 0; padding: 0; display: flex; flex-direction: column; height: 100vh; }
+    .containerlist { display: flex; flex-direction: column; flex: 1; }
     header, footer { flex-shrink: 0; }
     main { flex-grow: 1; display: flex; justify-content: center; align-items: center; }
-    .form-container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 600px; width: 100%; }
+    .form-containerlist { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 600px; width: 100%; }
     h1 { font-size: 24px; margin-bottom: 20px; text-align: center; }
     label { display: block; margin-bottom: 8px; font-weight: bold; }
     input[type="text"], input[type="password"] { width: calc(100% - 20px); padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
@@ -93,9 +93,9 @@ function listinventar($vorname, $nachname, $db_username, $db_password, $db_name)
     .inventory-list li { padding: 8px; background-color: #f9f9f9; margin-bottom: 5px; border: 1px solid #ccc; border-radius: 4px; }
 </style>
 
-<div class="container">
+<div class="containerlist">
     <main>
-        <div class="form-container">
+        <div class="form-containerlist">
             <h1>Inventar Liste</h1>
             <form method="POST" action="listinventar.php">
                 <label for="vorname">Vorname:</label>

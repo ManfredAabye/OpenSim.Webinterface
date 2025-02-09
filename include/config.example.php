@@ -9,6 +9,14 @@ define('DB_NAME', 'your_database');
 define('BASE_URL', 'http://yourdomain.com');
 define('SITE_NAME', 'Dein Grid Name');
 
+// ACHTUNG!!! Bitte folgende Passwörter unbedingt austauschen!
+// Define the list of admin-provided registration passwords
+$registration_passwords_register = ["rUKBGMhZghjPEwps454", "bXWfgdfgCwbjDCE6Z", "rksYwereraHJfkFvavLE"];
+// List of valid registration passwords for password reset
+$registration_passwords_reset = ["aTzWGY8ddfggdH4jNxC9", "nrUFDfxrtrtZGP8NBj8", "YMXkhjkhNg2eWXVNqp"];
+// List of valid registration passwords for partner
+$registration_passwords_partner = ["enqkUfghfgNawDec6pU", "9ETrW2ertertkgcr6bS", "JaJccasdasddfTxzFUTjWy"];
+
 // Weitere Seitenadressen
 define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
 define('ECONOMY_PAGE', BASE_URL . '/economycashbook.php');
@@ -111,9 +119,9 @@ define('IMAGE_SIZE', 'width:100%;height:100%'); // Größe der Bilder (100% für
 define('SLIDESHOW_DELAY', 9000); // Zeit zwischen Bildern (in ms, 9000 = 9 Sekunden)
 
 // Einstellungen für Maptiles
-// #0000FF #008000 #006400 #FF0000
-define('FREI_COLOR', '#0000FF'); // Farbe für freie Koordinaten
-define('BESCHLAGT_COLOR', '#008000'); // Farbe für SingleRegion
+// #0088FF #55C155 #006400 #FF0000
+define('FREI_COLOR', '#0088FF'); // Farbe für freie Koordinaten
+define('BESCHLAGT_COLOR', '#55C155'); // Farbe für SingleRegion
 define('VARREGION_COLOR', '#006400'); // Farbe für VarRegion
 define('CENTER_COLOR', '#FF0000'); // Farbe für Zentrum
 define('TILE_SIZE', '25px'); // Größe der Farbfelder

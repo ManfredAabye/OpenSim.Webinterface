@@ -38,11 +38,11 @@ if ($transactions_result === false) {
 ?>
 
 <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
-    .container { display: flex; flex-direction: column; min-height: 100vh; }
+    body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: black; /* Schriftfarbe auf Schwarz setzen */ margin: 0; padding: 0; }
+    .containercash { display: flex; flex-direction: column; min-height: 100vh; }
     header, footer { flex-shrink: 0; }
     main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #fff; }
-    .table-container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; max-width: 800px; }
+    .table-containercash { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; max-width: 800px; }
     h1 { font-size: 24px; margin-bottom: 20px; text-align: center; }
     h2 { font-size: 18px; margin-bottom: 10px; }
     table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 12px; }
@@ -51,9 +51,9 @@ if ($transactions_result === false) {
     th { background-color: #f2f2f2; }
 </style>
 
-<div class="container">
+<div class="containercash">
     <main>
-        <div class="table-container">
+        <div class="table-containercash">
             <h1>cash book</h1>
 
             <h2>Balances</h2>

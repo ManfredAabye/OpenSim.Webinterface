@@ -2,9 +2,6 @@
 $title = "Register";
 include 'include/config.php';
 include 'include/header.php';
-
-// Define the list of admin-provided registration passwords
-$registration_passwords = ["rUKBGMhZghjghjPEwps454", "bXWpdm8dfgdfgCwbjDCE6Z", "rksYwereraHJfkFvavLE"];
 ?>
 
 <style>
@@ -33,7 +30,7 @@ form input[type="submit"]:hover {background-color: #0056b3;}
         $reg_pass = filter_input(INPUT_POST, 'reg_pass', FILTER_SANITIZE_STRING);
 
         if ($vorname && $nachname && $passw && $email && $prim_uuid && $modell && $reg_pass) {
-            if (in_array($reg_pass, $registration_passwords)) {
+            if (in_array($reg_pass, $registration_passwords_register)) {
                 // Command to create a new user
                 $command = "screen -S RO -p 0 -X eval \"stuff 'create user $vorname $nachname $passw $email $prim_uuid $modell'^M\"";
 

@@ -112,7 +112,7 @@ function loadiar($vorname, $nachname, $passwort, $datei, $dateiname) {
 
     header, footer { flex-shrink: 0; }
     main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #fff; }
-    .form-container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; width: 100%; }
+    .form-container { background-color: #fff; color: black; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; width: 100%; }
     h1 { font-size: 24px; margin-bottom: 20px; text-align: center; }
     label { display: block; margin-bottom: 8px; font-weight: bold; }
     input[type="text"], input[type="password"], input[type="file"] { width: calc(100% - 20px); padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }

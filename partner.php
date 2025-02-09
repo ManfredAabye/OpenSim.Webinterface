@@ -27,11 +27,8 @@ form input[type="submit"]:hover {background-color: #0056b3;}
         $nachname2 = filter_input(INPUT_POST, 'nachname2', FILTER_SANITIZE_STRING);
         $reg_pass = filter_input(INPUT_POST, 'reg_pass', FILTER_SANITIZE_STRING);
 
-        // List of valid registration passwords
-        $registration_passwords = ["enqkUpgghfghfgNawDec6pU", "9ETrW2ertertkhr9gcr6bS", "JaJccasdasddfGTxzFUTjWy"];
-
         if ($vorname1 && $nachname1 && $vorname2 && $nachname2 && $reg_pass) {
-            if (in_array($reg_pass, $registration_passwords)) {
+            if (in_array($reg_pass, $registration_passwords_partner)) {
                 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
                 // Get PrincipalID of person 1

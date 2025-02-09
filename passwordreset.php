@@ -25,11 +25,8 @@ form input[type="submit"]:hover {background-color: #0056b3;}
         $new_password = filter_input(INPUT_POST, 'new_password', FILTER_SANITIZE_STRING);
         $reg_pass = filter_input(INPUT_POST, 'reg_pass', FILTER_SANITIZE_STRING);
 
-        // List of valid registration passwords
-        $registration_passwords = ["aTzWGY8dfgdfggdH4jNxC9", "nrUFDfxbertrtZGP8NBj8", "YMXKGhjkhjkhNg2eWXVNqp"];
-
         if ($email && $new_password && $reg_pass) {
-            if (in_array($reg_pass, $registration_passwords)) {
+            if (in_array($reg_pass, $registration_passwords_reset)) {
                 $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
                 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
