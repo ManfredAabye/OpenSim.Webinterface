@@ -28,7 +28,7 @@ form input[type="submit"]:hover {background-color: #0056b3;}
         $reg_pass = filter_input(INPUT_POST, 'reg_pass', FILTER_SANITIZE_STRING);
 
         // List of valid registration passwords
-        $registration_passwords = ["enqkUpgNawDec6pU", "9ETrW2khr9gcr6bS", "JaJccfGTxzFUTjWy"];
+        $registration_passwords = ["enqkUpgghfghfgNawDec6pU", "9ETrW2ertertkhr9gcr6bS", "JaJccasdasddfGTxzFUTjWy"];
 
         if ($vorname1 && $nachname1 && $vorname2 && $nachname2 && $reg_pass) {
             if (in_array($reg_pass, $registration_passwords)) {

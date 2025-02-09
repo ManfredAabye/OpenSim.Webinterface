@@ -84,6 +84,7 @@ while ($row = mysqli_fetch_assoc($regions)) {
     background-color: white;
     border: 1px solid #ccc;
     z-index: 10;
+    color: black; /* Schriftfarbe auf Schwarz setzen */
 }
 .card.active {
     display: block;
@@ -103,6 +104,7 @@ while ($row = mysqli_fetch_assoc($regions)) {
             }
         }
         ?>
+    </div>
 
     <div id="freeRegionCard" class="card">
         <p>Diese Region ist frei und Sie können die Konfigurationen vornehmen.</p>
@@ -122,7 +124,6 @@ while ($row = mysqli_fetch_assoc($regions)) {
         <button onclick="hideCard()">Schließen</button>
     </div>
 
-
     <div id="occupiedRegionCard" class="card">
         <p>Region Name: <span id="region-name"></span></p>
         <p>Region UUID: <span id="region-uuid"></span></p>
@@ -131,7 +132,6 @@ while ($row = mysqli_fetch_assoc($regions)) {
         <p>Owner UUID: <span id="owner-uuid"></span></p>
         <button onclick="hideCard()">Schließen</button>
     </div>
-
 </main>
 
 <script>

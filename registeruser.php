@@ -4,7 +4,7 @@ include 'include/config.php';
 include 'include/header.php';
 
 // Define the list of admin-provided registration passwords
-$registration_passwords = ["rUKBGMhZPEwps454", "bXWpdm8CwbjDCE6Z", "rksYaHJfkFvavLE"];
+$registration_passwords = ["rUKBGMhZghjghjPEwps454", "bXWpdm8dfgdfgCwbjDCE6Z", "rksYwereraHJfkFvavLE"];
 ?>
 
 <style>

@@ -24,11 +24,53 @@ define('MAPTILE_PAGE', BASE_URL . '/maptile.php');
 define('PARTNER_PAGE', BASE_URL . '/partner.php');
 define('SEARCHSERVICE_PAGE', BASE_URL . '/searchservice.php');
 
+// Color Scheme:
+// Green
+// #008453 #FFC1FF #ECF6FF
+// Red
+// #008453 #FFC1FF #ECF6FF
+// OlivBlack
+// #141309 #ffffff #f4c00c
+// PastelPink
+// #fdc5f6 #15ffbc #0e1017
+// LimonGreen
+// #86C232 #474b4f #222629 #ffffff
+// Beige
+// #FDF5DF #5EBEC4 #F92C85
+// Orange
+// #FF6C28 #C29282 #1F1F21 #ffffff
+// RedWine
+// #CF1C18 #0A0A0A #FBFBFB
+// HdOrange
+// #FFAB00 #DD2E18 #ffffff #000000
+// SteelBlue
+// #151923 #202833 #66FCF1 #45A29F
+// Kobald
+// 0C44E3 #BD8886 #ffffff
+
+// Color Schemes
+$colorSchemes = [
+    'green' => ['#008453', '#FFC1FF', '#ECF6FF'],
+    'red' => ['#FF0000', '#FFC1FF', '#ECF6FF'],
+    'oliveBlack' => ['#141309', '#ffffff', '#f4c00c'],
+    'pastelPink' => ['#fdc5f6', '#15ffbc', '#0e1017'],
+    'limonGreen' => ['#86C232', '#474b4f', '#222629', '#ffffff'],
+    'beige' => ['#FDF5DF', '#5EBEC4', '#F92C85'],
+    'orange' => ['#FF6C28', '#C29282', '#1F1F21', '#ffffff'],
+    'redWine' => ['#CF1C18', '#0A0A0A', '#FBFBFB'],
+    'hdOrange' => ['#FFAB00', '#DD2E18', '#ffffff', '#000000'],
+    'steelBlue' => ['#151923', '#202833', '#66FCF1', '#45A29F'],
+    'kobald' => ['#0C44E3', '#BD8886', '#ffffff']
+];
+
+// Wählen Sie das Farbschema, das Sie verwenden möchten
+$currentColorScheme = $colorSchemes['oliveBlack']; // Beispiel: Grün
+
 // Farben und Schriftart
-define('PRIMARY_COLOR', '#000000'); // Allgemeine Schriftfarbe Schwarz
-define('SECONDARY_COLOR', '#F5F5F5'); // Hintergrundfarbe
-define('HEADER_COLOR', '#00BFFF'); // Farbe des Headers
-define('FOOTER_COLOR', '#00BFFF'); // Farbe des Footers
+define('HEADER_COLOR', $currentColorScheme[0]); // Farbe des Headers
+define('FOOTER_COLOR', $currentColorScheme[0]); // Farbe des Footers
+define('SECONDARY_COLOR', $currentColorScheme[1]); // Hintergrundfarbe
+define('PRIMARY_COLOR', $currentColorScheme[2]); // Allgemeine Schriftfarbe
 define('FONT_FAMILY_STATS', 'Arial, Verdana, sans-serif');
 define('FONT_FAMILY', 'Pacifico, normal, serif');
 
@@ -69,6 +111,7 @@ define('IMAGE_SIZE', 'width:100%;height:100%'); // Größe der Bilder (100% für
 define('SLIDESHOW_DELAY', 9000); // Zeit zwischen Bildern (in ms, 9000 = 9 Sekunden)
 
 // Einstellungen für Maptiles
+// #0000FF #008000 #006400 #FF0000
 define('FREI_COLOR', '#0000FF'); // Farbe für freie Koordinaten
 define('BESCHLAGT_COLOR', '#008000'); // Farbe für SingleRegion
 define('VARREGION_COLOR', '#006400'); // Farbe für VarRegion
@@ -79,6 +122,6 @@ define('TILE_SIZE', '25px'); // Größe der Farbfelder
 DEFINE('CONF_CENTER_COORD_X', 5100); // X-KOORDINATE DES ZENTRUMS
 DEFINE('CONF_CENTER_COORD_Y', 5100); // Y-KOORDINATE DES ZENTRUMS
 
-DEFINE('MAPS_X', 32); 
+DEFINE('MAPS_X', 32);
 DEFINE('MAPS_Y', 32);
 ?>
