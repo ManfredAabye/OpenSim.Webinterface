@@ -60,7 +60,7 @@ ChldAg = 0;
 Uptime = "";
 Version = "";
 // var url = "http://openmanniland.de:9010/jsonSimStats/?callback=?";
-var url = "http://openmanniland.de:9010/jsonSimStats?region=OML-Welcome";
+var url = "http://youreopensim:9000/jsonSimStats?region=Welcome";
  
 setInterval(function() {$.getJSON(url, function(data) {
     SimFPS = Math.round(data.SimFPS);
