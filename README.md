@@ -83,7 +83,7 @@ Economy support is no longer required, but I would like to provide a small overv
 
 09.02.2025 Farbspielerei eingefügt.
 
-10.02.2025 Alles überarbeitet Passwortgenerator hinzugefügt über 700 Fehler beseitigt.
+10.02.2025 Alles überarbeitet, Passwortgenerator hinzugefügt, über 700 Fehler beseitigt.
 
 * MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php" ; **Funktioniert**
 * SearchURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/searchservice.php" ; **Funktioniert**
