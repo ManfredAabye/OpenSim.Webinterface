@@ -81,6 +81,10 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## TODO
 
+09.02.2025 Farbspielerei eingefügt.
+
+10.02.2025 Alles überarbeitet Passwortgenerator hinzugefügt über 700 Fehler beseitigt.
+
 * MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php" ; **Funktioniert**
 * SearchURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/searchservice.php" ; **Funktioniert**
 * DestinationGuide = "${Const|BaseURL}/webinterface/guide.php" ; **Funktioniert**
@@ -93,11 +97,5 @@ Economy support is no longer required, but I would like to provide a small overv
 * password = ${Const|BaseURL}/webinterface/passwordreset.php ; **Funktioniert**
 * partner = ${Const|BaseURL}/webinterface/partner.php ; **Funktioniert**
 * GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php ; **Funktioniert**
-
----
-
-09.02.2025 Farbspielerei eingefügt.
-
-10.02.2025 Alles überarbeitet Passwortgenerator hinzugefügt über 700 Fehler beseitigt.
 
 ---
