@@ -1,7 +1,6 @@
 <?php
 $title = "MapTile";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 
 // Verbindung zur Datenbank herstellen
 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -167,4 +166,4 @@ function hideCard() {
 }
 </script>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

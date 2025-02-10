@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Destination Guide</title>
     <style>
-        body {
+        .guidebody {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 10px;
@@ -28,7 +28,7 @@
             box-sizing: border-box;
         }
         .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         }
         .card img {
             width: 100%; /* Bild passt sich der Breite des Containers an */
@@ -44,12 +44,21 @@
         .card p {
             font-size: 8px; /* Kleinere Textgröße */
         }
+        .shopping {
+            background-color: #ff9999; /* Light red */
+        }
+        .education {
+            background-color: #99ccff; /* Light blue */
+        }
+        .art {
+            background-color: #ccffcc; /* Light green */
+        }
         .container {
-        padding: 2px 16px;
+            padding: 2px 16px;
         }
     </style>
 </head>
-<body>
+<body class="guidebody">
     <?php
     // Lese die JSON-Datei ein
     $json = file_get_contents('include/destinations.json');
@@ -58,7 +67,7 @@
     // Durchlaufe die Kategorien und Ziele
     foreach ($data as $category => $destinations) {
         foreach ($destinations as $destination) {
-            echo '<div class="card">';
+            echo '<div class="card ' . $category . '">';
             echo '<h3>' . $destination['name'] . '</h3>';
             echo '<a href="' . $destination['url'] . '">';
             echo '<img src="' . $destination['image'] . '" alt="' . $destination['name'] . '">';

@@ -1,7 +1,6 @@
 <?php
 $title = "SearchService";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 ?>
 
 <style>
@@ -24,8 +23,9 @@ th, td {padding: 8px; text-align: left;}
     <form method="post" action="">
         <label for="search_type">Search Type:</label>
         <select id="search_type" name="search_type">
-            <option value="inventoryitems">Inventory Items</option>
-            <option value="inventoryfolders">Inventory Folders</option>
+            <option value="userinfo">People (User Info)</option>
+            <option value="os_groups_groups">Groups</option>
+            <option value="regions">Regions</option>
         </select>
         <label for="search_query">Search Query:</label>
         <input type="text" id="search_query" name="search_query" required>
@@ -39,10 +39,15 @@ th, td {padding: 8px; text-align: left;}
 
         $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-        if ($search_type === 'inventoryitems') {
-            $query = "SELECT assetID, inventoryName, salePrice, avatarID FROM inventoryitems WHERE inventoryName LIKE '%$search_query%' OR inventoryDescription LIKE '%$search_query%'";
-        } elseif ($search_type === 'inventoryfolders') {
-            $query = "SELECT folderName, type, version, folderID, agentID FROM inventoryfolders WHERE folderName LIKE '%$search_query%'";
+        if ($search_type === 'userinfo') {
+            // Suchen nach Userinfo
+            $query = "SELECT * FROM `userinfo` WHERE `user` LIKE '%$search_query%' OR `avatar` LIKE '%$search_query%' OR `serverurl` LIKE '%$search_query%' ORDER BY `avatar` ASC, `serverurl` ASC";
+        } elseif ($search_type === 'os_groups_groups') {
+            // Suchen nach Gruppen
+            $query = "SELECT * FROM `os_groups_groups` WHERE `Name` LIKE '%$search_query%' OR `Location` LIKE '%$search_query%' ORDER BY `Name` ASC";
+        } elseif ($search_type === 'regions') {
+            // Suchen nach Regionen
+            $query = "SELECT * FROM `regions` WHERE `regionName` LIKE '%$search_query%' OR `serverIP` LIKE '%$search_query%' ORDER BY `regionName` DESC";
         } else {
             $query = "";
         }
@@ -53,10 +58,12 @@ th, td {padding: 8px; text-align: left;}
                 echo "<h3>Search Results:</h3>";
                 echo "<table>";
                 echo "<tr>";
+                // Tabellenkopf anzeigen
                 foreach (mysqli_fetch_fields($result) as $field) {
                     echo "<th>" . htmlspecialchars($field->name) . "</th>";
                 }
                 echo "</tr>";
+                // Ergebnisse ausgeben
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
                     foreach ($row as $value) {
@@ -74,4 +81,4 @@ th, td {padding: 8px; text-align: left;}
     ?>
 </main>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

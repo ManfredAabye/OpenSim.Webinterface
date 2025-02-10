@@ -1,7 +1,6 @@
 <?php
 $title = "Economy";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 
 // Fehlerberichterstattung aktivieren
 // error_reporting(E_ALL);
@@ -144,6 +143,6 @@ if ($transactions_result === false) {
         </div>
     </main>
 
-    <?php include 'include/footer.php'; ?>
+    <?php include_once 'include/footer.php'; ?>
 
 </div>

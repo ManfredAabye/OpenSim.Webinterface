@@ -1,7 +1,6 @@
 <?php
 $title = "GridStatus";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 /*
    ; Simulator Stats URI
    ; Aktivieren Sie JSON-Simulatordaten, indem Sie einen URI-Namen festlegen (Grosschreibung-/Kleinschreibung beachten)
@@ -117,4 +116,4 @@ function setTags() {
     <div id="chart_div"></div>
 </body>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

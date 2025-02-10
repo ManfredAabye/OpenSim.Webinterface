@@ -1,7 +1,8 @@
+<?php session_start(); ?>
+
 <?php
 $title = "Folder Service";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 
 // Fehlerberichterstattung aktivieren
 // error_reporting(E_ALL);
@@ -14,8 +15,6 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
 }
-
-session_start();
 
 $vorname = $nachname = '';
 $inventory = [];
@@ -124,5 +123,8 @@ function listinventar($vorname, $nachname, $db_username, $db_password, $db_name)
             <?php endif; ?>
         </div>
     </main>
-    <?php include 'include/footer.php'; ?>
+    <?php include_once 'include/footer.php'; ?>
 </div>
+
+
+

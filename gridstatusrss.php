@@ -1,10 +1,7 @@
 <?php
 $title = "GridStatusRSS";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 ?>
-
-
 
 <?php
 // Feed-URL des RSS-Feeds
@@ -39,10 +36,10 @@ if(!file_exists($feedcache_path) or filemtime($feedcache_path) < (time() - $feed
   }
   $output .= '</ul>';
   echo $output;
-  file_put_contents($feedcache_path, $output);
+  //file_put_contents($feedcache_path, $output);
 } else {
   echo file_get_contents($feedcache_path);
 }
 ?>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

@@ -1,7 +1,6 @@
 <?php
 $title = "Register";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 ?>
 
 <style>
@@ -95,4 +94,4 @@ form input[type="submit"]:hover {background-color: #0056b3;}
     </form>
 </main>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

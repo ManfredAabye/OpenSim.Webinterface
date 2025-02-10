@@ -1,6 +1,5 @@
-<?php include('include/config.php'); ?>
 <?php $title = "Home"; ?>
-<?php include('include/header.php'); ?>
+<?php include_once('include/header.php'); ?>
 
 <main class="container">
     <h2>Willkommen auf der <?php echo SITE_NAME; ?> Startseite</h2>
@@ -21,7 +20,8 @@
         <li><a href="registeruser.php">Register Page</a></li>
         <li><a href="searchservice.php">Search Page</a></li>
         <li><a href="welcomesplashpage.php">Welcome Page</a></li>
+        <li><a href="include/paswd_generator.php">password generator Page</a></li>
     </ul>
 </main>
 
-<?php include('include/footer.php'); ?>
+<?php include_once('include/footer.php'); ?>

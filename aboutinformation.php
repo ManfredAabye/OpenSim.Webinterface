@@ -1,7 +1,6 @@
 <?php
 $title = "About";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 ?>
 
 <main>
@@ -94,4 +93,4 @@ include 'include/header.php';
     </p>
 </main>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

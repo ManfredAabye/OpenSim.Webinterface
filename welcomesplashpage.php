@@ -1,6 +1,6 @@
 <?php
 $title = "Welcome";
-include "include/config.php";
+include_once "include/config.php";
 ?>
 
 <html>

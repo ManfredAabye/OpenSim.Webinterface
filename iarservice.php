@@ -1,7 +1,6 @@
 <?php
 $title = "IAR Service";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 
 // Fehlerberichterstattung aktivieren
 // error_reporting(E_ALL);
@@ -109,7 +108,6 @@ function loadiar($vorname, $nachname, $passwort, $datei, $dateiname) {
 <style>
     .bodyiar { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
     .containeriar { display: flex; flex-direction: column; min-height: 80vh; }
-
     header, footer { flex-shrink: 0; }
     main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #fff; }
     .form-container { background-color: #fff; color: black; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; width: 100%; }
@@ -142,5 +140,5 @@ function loadiar($vorname, $nachname, $passwort, $datei, $dateiname) {
             </form>
         </div>
     </main>
-    <?php include 'include/footer.php'; ?>
+    <?php include_once 'include/footer.php'; ?>
 </div>

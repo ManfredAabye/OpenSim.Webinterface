@@ -1,7 +1,6 @@
 <?php
 $title = "Media";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 ?>
 
 <style>
@@ -59,4 +58,4 @@ setInterval(fetchMetadata, 10000);
 fetchMetadata(); // Initial fetch
 </script>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>

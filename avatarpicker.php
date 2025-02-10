@@ -1,7 +1,6 @@
 <?php
 $title = "AvatarPicker";
-include 'include/config.php';
-include 'include/header.php';
+include_once 'include/header.php';
 ?>
 
 <main>
@@ -9,4 +8,4 @@ include 'include/header.php';
     <p>All information related to the AvatarPicker can be found here.</p>
 </main>
 
-<?php include 'include/footer.php'; ?>
+<?php include_once 'include/footer.php'; ?>
