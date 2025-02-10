@@ -93,6 +93,7 @@ Economy support is no longer required, but I would like to provide a small overv
 * password = ${Const|BaseURL}/webinterface/passwordreset.php ; **Funktioniert**
 * partner = ${Const|BaseURL}/webinterface/partner.php ; **Funktioniert**
 * GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php ; **Funktioniert**
-
-Farbspielerei eingefügt.
+---
+09.02.2025 Farbspielerei eingefügt.
+10.02.2025 Alles überarbeitet Passwortgenerator hinzugefügt über 700 Fehler beseitigt.
 ---
