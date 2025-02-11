@@ -1,6 +1,13 @@
 <?php
 $title = "SearchService";
 include_once 'include/header.php';
+// todo: places, land for sale, classifieds, events fehlen.
+
+// Grid info: [grid-info]
+// Grid status: [grid-status]
+// Grid status: [popular-places]
+// Profile page: [avatar-profile]
+
 ?>
 
 <style>

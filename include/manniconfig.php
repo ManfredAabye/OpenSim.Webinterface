@@ -1,20 +1,19 @@
+
 <?php
-// MySQL Verbindungsdaten
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'your_username');
-define('DB_PASSWORD', 'your_password');
-define('DB_NAME', 'your_database');
-define('DB_ASSET_NAME', 'your_database');
+define('DB_USERNAME', 'manni');
+define('DB_PASSWORD', 'Manni869e8a261ac795c8ca2bb1aedbMariaDB');
+define('DB_NAME', '24omlrobust');
 
 // Seitenadressen
-define('BASE_URL', 'http://yourdomain.com');
-define('SITE_NAME', 'Dein Grid Name');
+define('BASE_URL', 'http://openmanniland.de');
+define('SITE_NAME', 'OpenManniLand');
 
 // Passwörter (unbedingt austauschen!)
 // Für das austauschen der Passwöter könnt ihr den paswd_generator.php benutzen den ihr im Verszeichnis /include findet.
-$registration_passwords_register = ["BUdWVZNdmI7uey2g", "cG01IkibPv22792V", "RfXfdu8HW3zdsLuW", "NUI9ksuwYJjf5IqK", "s0xbSyes1BVtvL6Z"];
-$registration_passwords_reset = ["809yFu6w8Y0L0Af6", "7KeGhGgogwRMTuCY", "Exhw0sbrb5xYEure", "CrUsURri3AaKYAV3", "va8zI2zt3DQ6etma"];
-$registration_passwords_partner = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
+$registration_passwords_register = ["Tvx885rsGC33q9lW", "Es2uej4GAYHmqJlF", "xNVYWAvQIaUexmHq", "iBunFjNnUdAvQXOR", "fkOhsF0ym0JebQt0"];
+$registration_passwords_reset = ["9u3AlkBaJ1e7wIuh", "eHkqplgCMbHS6GhJ", "uuCWamCkwCRaNQSB", "lfAxs6yDQmrqtLqA", "k3UhXFTpJlKYaeIK"];
+$registration_passwords_partner = ["5WmRW4BU5mr6zqxr", "2ZAYjmQFF5B6AxfM", "0lVOZRcDYA3r44Ih", "CaU3RijXIBXYH2lR", "GWy3Z58juoAwwhZE"];
 
 // Weitere Seitenadressen
 define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');

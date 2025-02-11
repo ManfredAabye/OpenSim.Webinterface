@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db_username = $_POST['db_username'];
     $db_password = $_POST['db_password'];
     $db_name = $_POST['db_name'];
+    $db_name = $_POST['db_asset_name'];
     $base_url = $_POST['base_url'];
     $site_name = $_POST['site_name'];
     $initial_color_scheme = $_POST['initial_color_scheme'];
@@ -71,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $config_content .= "define('DB_USERNAME', '$db_username');\n";
     $config_content .= "define('DB_PASSWORD', '$db_password');\n";
     $config_content .= "define('DB_NAME', '$db_name');\n\n";
+    $config_content .= "define('DB_ASSET_NAME', '$db_name');\n\n";
     $config_content .= "// Seitenadressen\n";
     $config_content .= "define('BASE_URL', '$base_url');\n";
     $config_content .= "define('SITE_NAME', '$site_name');\n\n";
@@ -258,6 +260,9 @@ include 'config.php';
 
                 <label for="db_name">DB Name:</label>
                 <input type="text" id="db_name" name="db_name" value="<?php echo DB_NAME; ?>" required>
+
+                <label for="db_asset_name">DB Asset Name:</label>
+                <input type="text" id="db_asset_name" name="db_asset_name" value="<?php echo DB_ASSET_NAME; ?>" required>
 
                 <h3>Seiten-Einstellungen</h3>
                 <label for="base_url">Base URL:</label>
