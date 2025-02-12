@@ -20,6 +20,12 @@ $registration_passwords_reset = [generatePassword(), generatePassword(), generat
 
 // Generiere Passwörter für das Partner-Array
 $registration_passwords_partner = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+
+// Generiere Passwörter für das inventory-Array
+$registration_passwords_inventory = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+
+// Generiere Passwörter für das datatable-Array
+$registration_passwords_datatable = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +37,8 @@ $registration_passwords_partner = [generatePassword(), generatePassword(), gener
 echo '$registration_passwords_register = ["' . implode('", "', $registration_passwords_register) . '"];' . PHP_EOL;
 echo '$registration_passwords_reset = ["' . implode('", "', $registration_passwords_reset) . '"];' . PHP_EOL;
 echo '$registration_passwords_partner = ["' . implode('", "', $registration_passwords_partner) . '"];' . PHP_EOL;
+echo '$registration_passwords_inventory = ["' . implode('", "', $registration_passwords_inventory) . '"];' . PHP_EOL;
+echo '$registration_passwords_datatable = ["' . implode('", "', $registration_passwords_datatable) . '"];' . PHP_EOL;
 ?>
     </pre>
 </body>
