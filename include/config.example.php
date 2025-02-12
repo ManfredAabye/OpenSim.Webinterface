@@ -15,6 +15,8 @@ define('SITE_NAME', 'Dein Grid Name');
 $registration_passwords_register = ["BUdWVZNdmI7uey2g", "cG01IkibPv22792V", "RfXfdu8HW3zdsLuW", "NUI9ksuwYJjf5IqK", "s0xbSyes1BVtvL6Z"];
 $registration_passwords_reset = ["809yFu6w8Y0L0Af6", "7KeGhGgogwRMTuCY", "Exhw0sbrb5xYEure", "CrUsURri3AaKYAV3", "va8zI2zt3DQ6etma"];
 $registration_passwords_partner = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
+$registration_passwords_inventory = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
+$registration_passwords_datatable = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
 
 // Weitere Seitenadressen
 define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
