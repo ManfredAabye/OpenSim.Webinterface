@@ -4,6 +4,7 @@ include 'config.php';
 
 <!DOCTYPE html>
 <html lang="de">
+<link rel="icon" type="image/x-icon" href="include/favicon.ico">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

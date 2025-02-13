@@ -26,6 +26,10 @@ $registration_passwords_inventory = [generatePassword(), generatePassword(), gen
 
 // Generiere Passwörter für das datatable-Array
 $registration_passwords_datatable = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+
+$registration_passwords_listinventar = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+
+$registration_passwords_picreader = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +43,8 @@ echo '$registration_passwords_reset = ["' . implode('", "', $registration_passwo
 echo '$registration_passwords_partner = ["' . implode('", "', $registration_passwords_partner) . '"];' . PHP_EOL;
 echo '$registration_passwords_inventory = ["' . implode('", "', $registration_passwords_inventory) . '"];' . PHP_EOL;
 echo '$registration_passwords_datatable = ["' . implode('", "', $registration_passwords_datatable) . '"];' . PHP_EOL;
+echo '$registration_passwords_listinventar = ["' . implode('", "', $registration_passwords_listinventar) . '"];' . PHP_EOL;
+echo '$registration_passwords_picreader = ["' . implode('", "', $registration_passwords_picreader) . '"];' . PHP_EOL;
 ?>
     </pre>
 </body>

@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $vorname = $_POST['vorname'] ?? '';
     $nachname = $_POST['nachname'] ?? '';
 
-    // Überprüfen des Passworts
-    if ($input_password === '#45218932ß') {
+    // Überprüfen, ob das eingegebene Passwort in der Liste ist
+    if (in_array($input_password, $registration_passwords_listinventar)) {
         $_SESSION['authenticated'] = true;
 
         if (!empty($vorname) && !empty($nachname)) {
@@ -125,6 +125,3 @@ function listinventar($vorname, $nachname, $db_username, $db_password, $db_name)
     </main>
     <?php include_once 'include/footer.php'; ?>
 </div>
-
-
-

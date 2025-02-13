@@ -2,10 +2,6 @@
 $title = "IAR Service";
 include_once 'include/header.php';
 
-// Fehlerberichterstattung aktivieren
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
-
 // Verbindung zur Datenbank herstellen
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 

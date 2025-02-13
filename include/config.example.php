@@ -10,13 +10,21 @@ define('DB_ASSET_NAME', 'your_database');
 define('BASE_URL', 'http://yourdomain.com');
 define('SITE_NAME', 'Dein Grid Name');
 
+// Asset Bilder
+define('ASSETPFAD', 'cache/');
+define('ASSET_FEHLT', ASSETPFAD . '00000000-0000-0000-0000-000000000002');
+define('GRID_ASSETS', ':8003/assets/');
+define('GRID_ASSETS_SERVER', 'BASE_URL' . 'GRID_ASSETS');
+
 // Passwörter (unbedingt austauschen!)
 // Für das austauschen der Passwöter könnt ihr den paswd_generator.php benutzen den ihr im Verszeichnis /include findet.
-$registration_passwords_register = ["BUdWVZNdmI7uey2g", "cG01IkibPv22792V", "RfXfdu8HW3zdsLuW", "NUI9ksuwYJjf5IqK", "s0xbSyes1BVtvL6Z"];
-$registration_passwords_reset = ["809yFu6w8Y0L0Af6", "7KeGhGgogwRMTuCY", "Exhw0sbrb5xYEure", "CrUsURri3AaKYAV3", "va8zI2zt3DQ6etma"];
-$registration_passwords_partner = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
-$registration_passwords_inventory = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
-$registration_passwords_datatable = ["GhAhOwsqccxYflCi", "yqsgm4XIVjGH1mko", "RA9jkQjz8CTUl33A", "Zz1Moy9AvWeqqN5I", "o1klYMTi8aVMVLhd"];
+$registration_passwords_register = ["8ggbOMbR0u1nirOW", "lqdocr4SLk4a3vt7", "RwRP7SIEpF0jscrL", "KjiB4DGhmVJjdjXW", "tTiUjpt5GTeBJYWX"];
+$registration_passwords_reset = ["4djfCtsKMReqYjcc", "IFJ4yFSZyAwT0kXY", "iKqtTTT8NaZwXgbt", "83qk8MW2g8h5tGQr", "PoseOcJxOLy0jQm2"];
+$registration_passwords_partner = ["D1Q8lGlukfcvCjbQ", "uulX8B73lqziocxv", "yh2mgCqvW7qNDYlX", "mlmrd1Xy7iT8rcJe", "YdK672sRf6wPJcm1"];
+$registration_passwords_inventory = ["9YfGKCNwDoVXxJxo", "qfDcggDJVvUzgvZo", "IsOdFFeXfSwR2GAq", "CpzfBPi6mo3sStNf", "lE4uZ0n9ZLrBPozR"];
+$registration_passwords_datatable = ["UpV1I95Hs2Vpu86u", "0uNZdRpcinhxLfmx", "1mmZ0NMnpf4RCJKO", "QpHcV2VPYpMcNDsa", "B8kxzEPrfYEf1FsZ"];
+$registration_passwords_listinventar = ["3PULfnM9ITSIn2Z5", "8cEQnf1hmkz9knMA", "KKvxO1XgTiIFRk4u", "rWfc3dbM5d751N3T", "NtIy8PmE9zizqbou"];
+$registration_passwords_picreader = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 
 // Weitere Seitenadressen
 define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
@@ -125,6 +133,7 @@ define('TEXT_ON', 'ON'); // Begrüßungstext anzeigen: ON / OFF
 define('LOGO_PATH', 'include/Metavers150.png'); // Pfad zum Logo
 define('LOGO_WIDTH', '50%'); // Logo-Breite
 define('LOGO_HEIGHT', '25%'); // Logo-Höhe
+define('GUIDE_DATA', 'DATA'); // DATA/JSON guide anzeigen.
 
 // Begrüßungstext
 define('PRIMARY_COLOR_LOGO', '#FFFFFF'); // Allgemeine Schriftfarbe Schwarz

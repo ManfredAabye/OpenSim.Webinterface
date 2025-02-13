@@ -17,6 +17,7 @@
         <li><a href="maptile.php">Maptile Page</a></li>
         <li><a href="partner.php">Partner Page</a></li>
         <li><a href="passwordreset.php">Password Page</a></li>
+        <li><a href="picreader.php">Picreader Page</a></li>
         <li><a href="registeruser.php">Register Page</a></li>
         <li><a href="searchservice.php">Search Page</a></li>
         <li><a href="welcomesplashpage.php">Welcome Page</a></li>
