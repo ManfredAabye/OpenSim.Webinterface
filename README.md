@@ -1,7 +1,7 @@
 # OpenSim.Webinterface
 Webinterface PHP 8.3
 
-Hier entsteht ein Webinterface für den OpenSimulator dieser ist noch nicht funktionsfähig.
+Hier entsteht ein Webinterface für den OpenSimulator dieser ist noch nicht voll funktionsfähig.
 
 Das Webinterface hat die Aufgabe, die in der Robust.ini aufgeführten Seiten zu unterstützen.
 
@@ -9,7 +9,7 @@ Eine Unterstützung für Economy ist nicht mehr erforderlich, ich möchte aber e
 
 ---
 
-A web interface for the OpenSimulator is being created here. It is not yet functional.
+A web interface for the OpenSimulator is being created here. It is not yet fully functional.
 
 The web interface is designed to support the pages listed in Robust.ini.
 
