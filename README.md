@@ -81,6 +81,10 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## TODO
 
+14.02.2025 Mit der neuen guide.php lassen sich ausgesuchte Regionen präsentieren, alle Regionen im Grid anwählen, bis zu 293 Grids direkt hin teleportieren.
+
+14.02.2025 With the new guide.php you can present selected regions, select all regions in the grid, and teleport directly to up to 293 grids.
+
 09.02.2025 Farbspielerei eingefügt.
 
 10.02.2025 Alles überarbeitet, Passwortgenerator hinzugefügt, über 700 Fehler beseitigt.
