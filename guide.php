@@ -1,6 +1,22 @@
 <?php
 $title = "Guide";
 include_once "include/config.php";
+
+// Fehlerbehandlung für die JSON-Datei
+$json = file_get_contents('include/destinations.json');
+if ($json === false) {
+    die('Fehler beim Laden der JSON-Datei.');
+}
+$data = json_decode($json, true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    die('Fehler beim Dekodieren der JSON-Datei.');
+}
+
+// Datenbankverbindung mit Fehlerbehandlung
+$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+if (mysqli_connect_errno()) {
+    die('Fehler bei der Verbindung zur Datenbank: ' . mysqli_connect_error());
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,68 +25,173 @@ include_once "include/config.php";
     <meta charset="UTF-8">
     <title>Destination Guide</title>
     <style>
-        .guidebody { font-family: Arial, sans-serif; margin: 0; padding: 10px; background-color: #b0c4de; white-space: nowrap; overflow-x: auto; overflow-y: hidden; height: 225px; }
-        h1 { font-size: 12px; text-align: center; white-space: normal; }
-        .card { display: inline-block; vertical-align: top; margin-right: 20px; width: 150px; height: 150px; box-sizing: border-box; }
-        .card:hover { box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); }
-        .card img { width: 100%; height: 100%; }
-        .card a { text-decoration: none; color: #0066cc; }
-        .card h3 { font-size: 10px; }
-        .card p { font-size: 8px; }
-        .adventure { background-color: #ffcc99; }
-        .culture { background-color: #99ffcc; }
-        .nature { background-color: #cc99ff; }
-        .container { padding: 2px 16px; }
-        .region-container { display: flex; gap: 10px; padding: 10px; }
-        .region-link { text-decoration: none; color: #333; background: #ddd; padding: 5px 10px; border-radius: 5px; }
-        .region-link:hover { background: #bbb; }
+        body { font-family: Arial, sans-serif; background-color: #b0c4de; padding: 10px; }
+        h1 { font-size: 16px; text-align: center; }
+
+        .button-container { text-align: center; margin-bottom: 15px; }
+        button { padding: 10px; margin: 5px; cursor: pointer; }
+
+        .list-container { display: none; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 10px; }
+        .grid-container { display: none; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+        .region-box { background: #ddd; padding: 10px; border-radius: 5px; display: flex; align-items: center; }
+        .region-icon { margin-right: 5px; font-size: 16px; }
+
+        .grid-item { width: 23%; padding: 10px; border: 1px solid #aaa; background: white; text-align: center; border-radius: 5px; }
+        .grid-link { display: block; margin-top: 5px; padding: 5px; background: #0066cc; color: white; border-radius: 3px; text-decoration: none; }
+
+        .search-bar { width: 23%; padding: 10px; border: 1px solid #aaa; background: white; text-align: center; border-radius: 5px; }
+
+        .region-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.list-container2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+
+        .hop-buttons { display: flex; gap: 5px; margin-top: 5px; }
+        .hop-button { padding: 5px; background: #004080; color: white; border-radius: 3px; text-decoration: none; }
     </style>
 </head>
-<body class="guidebody">
+<body>
+
     <h1>Destination Guide</h1>
 
-    <!-- Regionsliste JSON -->
-    <?php
-    if (GUIDE_DATA === 'JSON') {
-        $json = file_get_contents('include/destinations.json');
-        $data = json_decode($json, true);
+    <!-- Auswahl Buttons -->
+    <div class="button-container">
+        <button onclick="showJSON()">Regionsliste JSON</button>
+        <button onclick="showDatabase()">Regionsliste Database</button>
+        <button onclick="showGridList()">Gridliste CSV</button>
+    </div>
 
-        foreach ($data as $category => $destinations) {
-            foreach ($destinations as $destination) {
-                echo '<div class="card ' . htmlspecialchars($category) . '">';
-                echo '<h3>' . htmlspecialchars($destination['name']) . '</h3>';
-                echo '<a href="' . htmlspecialchars($destination['url']) . '">';
-                echo '<img src="' . htmlspecialchars($destination['image']) . '" alt="' . htmlspecialchars($destination['name']) . '">';
-                echo '</a>';
+    <!-- ##########################  JSON-Regionsliste ######################################## -->
+    <div id="jsonList" class="guidebody" style="display: <?= (GRIDLIST_VIEW == 'json') ? 'flex' : 'none' ?>; flex-wrap: wrap; gap: 10px; justify-content: flex-start;">
+        <?php foreach ($data as $category => $destinations): ?>
+            <fieldset style='flex: 1; min-width: 250px; max-width: 350px;'>
+                <legend><?= htmlspecialchars(ucfirst($category)) ?></legend>
+                <div class='region-container' style='display: flex; flex-wrap: wrap; gap: 10px;'>
+                    <?php foreach ($destinations as $destination): ?>
+                        <div class="region-box">
+                            <a href="<?= htmlspecialchars($destination['url']) ?>" target="_blank">
+                                <img src="<?= htmlspecialchars($destination['image']) ?>" alt="<?= htmlspecialchars($destination['name']) ?>" width="50" height="50" style="border-radius:5px; margin-right:10px;">
+                            </a>
+                            <span><?= htmlspecialchars($destination['name']) ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </fieldset>
+        <?php endforeach; ?>
+    </div>
+
+
+    <!-- ########################################  Datenbank-Regionsliste ######################################## -->
+    <div id="databaseList" class="list-container2" style="display: <?= (GRIDLIST_VIEW == 'database') ? 'flex' : 'none' ?>;">
+        <?php
+        $sql = "SELECT regionName, serverIP, serverPort FROM regions ORDER BY last_seen DESC LIMIT 10";
+        $resultregions = mysqli_query($con, $sql);
+
+        while ($dsatz = mysqli_fetch_assoc($resultregions)) {
+            $region = htmlspecialchars($dsatz["regionName"]);
+            $ip = htmlspecialchars($dsatz["serverIP"]);
+            $port = htmlspecialchars($dsatz["serverPort"]);
+
+            // Link für den "Hop"-Button
+            $regionslink = "hop://$ip:$port/$region/128/128/23";
+
+            echo '<div class="region-box" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 10px;">';
+            // Button mit Regionsname
+            echo "<button style='margin-bottom: 5px;'>$region</button>";
+            // Button mit "Hop"
+            echo "<a href='$regionslink' class='hop-button' target='_blank' style='text-align: center;'>Hop $region</a>";
+            echo '</div>';
+        }
+
+        mysqli_close($con);
+        ?>
+    </div>
+
+
+
+
+
+    <!-- ##################### Grid Teleport Liste ######################################## -->
+    <div id="gridList" class="grid-container" style="display: <?= (GRIDLIST_VIEW == 'grid') ? 'flex' : 'none' ?>;">
+        <div class="search-bar">
+        <p>Search</p>
+            <input type="text" id="searchInput" onkeyup="filterGrids()" placeholder="Suche nach Grids...">            
+        </div>
+        <?php
+        if (($handle = fopen(GRIDLIST_FILE, "r")) !== false) {
+            fgetcsv($handle); // Überspringe die Header-Zeile
+            while (($data = fgetcsv($handle)) !== false) {
+                $gridName = htmlspecialchars($data[0]);
+                $loginURI = htmlspecialchars($data[1]);
+
+                // Erster Link: Direkter Link zum Grid
+                $gridlink1 = "secondlife:///app/gridmanager/addgrid/$loginURI";
+
+                // Zweiter Link: Link ohne spezifische Aktion
+                // todo: Fehler bei hop: http:// kann auch https:// sein
+                $gridlink2 = "hop://http://$loginURI/ ";
+
+
+                echo '<div class="grid-item">';
+                echo "<span>$gridName</span>";
+                echo '<div class="hop-buttons">';
+                echo "<a href='$gridlink1' class='grid-link' target='_blank' style='width: 60%; text-align: center;'>Viewer Grid Ziel</a>";
+                echo "<a href='$gridlink2' class='grid-link' target='_blank' style='width: 100%; text-align: center;'>Hop $gridName</a>";
+                echo '</div>';
                 echo '</div>';
             }
+            fclose($handle);
         }
-    }
-    ?>
-
-    <!-- Regionsliste Database -->
-    <div id='regionslist' class="guidebody">
-        <fieldset>
-            <legend>🌍 Regionen</legend>
-            <div class="region-container">
-                <?php
-                $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-                $sql = "SELECT regionName, serverIP, serverPort FROM regions ORDER BY last_seen DESC LIMIT 10";
-                $resultregions = mysqli_query($con, $sql);
-
-                while ($dsatz = mysqli_fetch_assoc($resultregions)) {
-                    $region = htmlspecialchars($dsatz["regionName"]);
-                    $ip = htmlspecialchars($dsatz["serverIP"]);
-                    $port = htmlspecialchars($dsatz["serverPort"]);
-                    $regionslink = "hop://$ip:$port/$region/103/113/23";
-
-                    echo "<a class='region-link' href='$regionslink' target='_blank'>$region</a>";
-                }
-
-                mysqli_close($con);
-                ?>
-            </div>
-        </fieldset>
+        ?>
     </div>
+
+    <script>
+        function filterGrids() {
+            const input = document.getElementById('searchInput').value.toUpperCase();
+            document.querySelectorAll('.grid-item').forEach(item => {
+                item.style.display = item.textContent.toUpperCase().includes(input) ? "" : "none";
+            });
+        }
+
+        function showJSON() {
+            document.getElementById('jsonList').style.display = 'flex';
+            document.getElementById('databaseList').style.display = 'none';
+            document.getElementById('gridList').style.display = 'none';
+        }
+
+        function showDatabase() {
+            document.getElementById('jsonList').style.display = 'none';
+            document.getElementById('databaseList').style.display = 'flex';
+            document.getElementById('gridList').style.display = 'none';
+        }
+
+        function showGridList() {
+            document.getElementById('jsonList').style.display = 'none';
+            document.getElementById('databaseList').style.display = 'none';
+            document.getElementById('gridList').style.display = 'flex';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            <?php if (GRIDLIST_VIEW == 'json'): ?>
+                showJSON();
+            <?php elseif (GRIDLIST_VIEW == 'database'): ?>
+                showDatabase();
+            <?php elseif (GRIDLIST_VIEW == 'grid'): ?>
+                showGridList();
+            <?php endif; ?>
+        });
+    </script>
+
 </body>
 </html>
