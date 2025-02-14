@@ -16,6 +16,10 @@ define('ASSET_FEHLT', ASSETPFAD . '00000000-0000-0000-0000-000000000002');
 define('GRID_ASSETS', ':8003/assets/');
 define('GRID_ASSETS_SERVER', 'BASE_URL' . 'GRID_ASSETS');
 
+// Guide
+define('GRIDLIST_FILE', 'include/gridlist.csv');
+define('GRIDLIST_VIEW', 'json'); // 'json', 'database' oder 'grid'
+
 // Passwörter (unbedingt austauschen!)
 // Für das austauschen der Passwöter könnt ihr den paswd_generator.php benutzen den ihr im Verszeichnis /include findet.
 $registration_passwords_register = ["8ggbOMbR0u1nirOW", "lqdocr4SLk4a3vt7", "RwRP7SIEpF0jscrL", "KjiB4DGhmVJjdjXW", "tTiUjpt5GTeBJYWX"];
