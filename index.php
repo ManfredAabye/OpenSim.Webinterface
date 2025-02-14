@@ -22,6 +22,10 @@
         <li><a href="searchservice.php">Search Page</a></li>
         <li><a href="welcomesplashpage.php">Welcome Page</a></li>
         <li><a href="include/paswd_generator.php">password generator Page</a></li>
+        <li><a href="gridlist.php">Gridlist Page</a></li>
+        <li><a href="icecast.php">Icecast Page</a></li>
+        <li><a href="inventory.php">Inventory Page</a></li>
+        <li><a href="tabledata.php">Tabledata Page</a></li>
     </ul>
 </main>
 
