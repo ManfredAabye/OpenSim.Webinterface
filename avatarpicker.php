@@ -1,8 +1,9 @@
-<?php session_start(); ?>
-
 <?php
+session_start();
+
 $title = "AvatarPicker Service";
 include_once 'include/header.php';
+include_once 'config.php'; // Einbinden der config.php
 
 // Fehlerberichterstattung aktivieren
 error_reporting(E_ALL);
@@ -25,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nachname = $_POST['nachname'] ?? '';
 
     // Überprüfen des Passworts
-    if ($input_password === '#45218932ß') {
+    if (in_array($input_password, $registration_passwords_avatarpicker)) {
         $_SESSION['authenticated'] = true;
 
         if (!empty($vorname) && !empty($nachname)) {

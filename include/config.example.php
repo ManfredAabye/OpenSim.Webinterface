@@ -22,13 +22,15 @@ define('GRIDLIST_VIEW', 'json'); // 'json', 'database' oder 'grid'
 
 // Passwörter (unbedingt austauschen!)
 // Für das austauschen der Passwöter könnt ihr den paswd_generator.php benutzen den ihr im Verszeichnis /include findet.
-$registration_passwords_register = ["8ggbOMbR0u1nirOW", "lqdocr4SLk4a3vt7", "RwRP7SIEpF0jscrL", "KjiB4DGhmVJjdjXW", "tTiUjpt5GTeBJYWX"];
-$registration_passwords_reset = ["4djfCtsKMReqYjcc", "IFJ4yFSZyAwT0kXY", "iKqtTTT8NaZwXgbt", "83qk8MW2g8h5tGQr", "PoseOcJxOLy0jQm2"];
-$registration_passwords_partner = ["D1Q8lGlukfcvCjbQ", "uulX8B73lqziocxv", "yh2mgCqvW7qNDYlX", "mlmrd1Xy7iT8rcJe", "YdK672sRf6wPJcm1"];
-$registration_passwords_inventory = ["9YfGKCNwDoVXxJxo", "qfDcggDJVvUzgvZo", "IsOdFFeXfSwR2GAq", "CpzfBPi6mo3sStNf", "lE4uZ0n9ZLrBPozR"];
-$registration_passwords_datatable = ["UpV1I95Hs2Vpu86u", "0uNZdRpcinhxLfmx", "1mmZ0NMnpf4RCJKO", "QpHcV2VPYpMcNDsa", "B8kxzEPrfYEf1FsZ"];
-$registration_passwords_listinventar = ["3PULfnM9ITSIn2Z5", "8cEQnf1hmkz9knMA", "KKvxO1XgTiIFRk4u", "rWfc3dbM5d751N3T", "NtIy8PmE9zizqbou"];
-$registration_passwords_picreader = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
+$registration_passwords_register = ["OvzoLrZpQbxwHsP3", "G9aPUGKx3fhVSeLm", "NRyom0fg5gHYHjF8", "3mcWCzFdB9aP7a4F", "v3H6Sr6YT4IJmZNz"];
+$registration_passwords_reset = ["INbXb4pyYElhO4ro", "YUR4qQtdPdqNPCcL", "18Z05ci6x5Lwk2jX", "xhTMX2yhxHBIhIX9", "dcr9Zj1P1wzA81oi"];
+$registration_passwords_partner = ["fq83j3fUD4Pt14x2", "iWZ01ddaJhW1qU7n", "OOJoLqmvjJg2rauq", "EwXBmJCYIdVcEJxZ", "1ZcifSkz6kQQNUS4"];
+$registration_passwords_inventory = ["CqcUFEfbqqJBaAGN", "XVl7sMok8SG14kzJ", "Q21StSKSqgdlAMRB", "rgCH5Io31kIQFSdF", "Fqsvfc2mslpQs8fO"];
+$registration_passwords_datatable = ["sJDPsjWeVtjFnT7T", "fSelRGthKhxNhh7B", "7ENHGULgVrPCvN07", "T0Keqj0XSKNpizMv", "gQ0fQQlsKL1XoNEB"];
+$registration_passwords_listinventar = ["0zhKwExYwslS6avl", "p2XqLubyLnJj6w0K", "EAGkhEBSF1kmMaU7", "6uEO0QsYNVywUCqC", "jjQKCRHTq0FhJQS4"];
+$registration_passwords_picreader = ["8QJ1qfQqQdAB2VpP", "B7jsbpRfNbQvEvun", "khM5EGwbAdVCCkIi", "IoFYcbTdp29D7ScG", "RVSjykBoimsenvkZ"];
+$registration_passwords_mutelist = ["gSyleqsr0jJLknxc", "QSo1qDugSEIzyAtK", "nekBnTrMy8DwFLul", "Yr2WAQQm0paTrtHz", "KA2MkqxgsXfSW3WR"];
+$registration_passwords_avatarpicker = ["7dN4QltDJgVnNfKy", "5ZXklsJWXRT49EqO", "SqdNjILt8qQ9xFVo", "KD2Dau5kixVexebi", "7LjLhXJJmzhVEIcl"];
 
 // Weitere Seitenadressen
 define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
