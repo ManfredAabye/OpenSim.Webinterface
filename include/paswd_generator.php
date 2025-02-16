@@ -30,6 +30,10 @@ $registration_passwords_datatable = [generatePassword(), generatePassword(), gen
 $registration_passwords_listinventar = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
 
 $registration_passwords_picreader = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+
+$registration_passwords_mutelist = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+
+$registration_passwords_avatarpicker = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +49,8 @@ echo '$registration_passwords_inventory = ["' . implode('", "', $registration_pa
 echo '$registration_passwords_datatable = ["' . implode('", "', $registration_passwords_datatable) . '"];' . PHP_EOL;
 echo '$registration_passwords_listinventar = ["' . implode('", "', $registration_passwords_listinventar) . '"];' . PHP_EOL;
 echo '$registration_passwords_picreader = ["' . implode('", "', $registration_passwords_picreader) . '"];' . PHP_EOL;
+echo '$registration_passwords_mutelist = ["' . implode('", "', $registration_passwords_mutelist) . '"];' . PHP_EOL;
+echo '$registration_passwords_avatarpicker = ["' . implode('", "', $registration_passwords_avatarpicker) . '"];' . PHP_EOL;
 ?>
     </pre>
 </body>
