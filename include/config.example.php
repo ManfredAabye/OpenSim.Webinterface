@@ -13,12 +13,19 @@ define('SITE_NAME', 'Dein Grid Name');
 // Asset Bilder
 define('ASSETPFAD', 'cache/');
 define('ASSET_FEHLT', ASSETPFAD . '00000000-0000-0000-0000-000000000002');
+define('GRID_PORT', ':8002');
 define('GRID_ASSETS', ':8003/assets/');
 define('GRID_ASSETS_SERVER', 'BASE_URL' . 'GRID_ASSETS');
 
 // Guide
 define('GRIDLIST_FILE', 'include/gridlist.csv');
 define('GRIDLIST_VIEW', 'json'); // 'json', 'database' oder 'grid'
+
+// Media 
+//define('MEDIA_SERVER', 'http://localhost:8500/stream');
+define('MEDIA_SERVER', 'http://schwarze-welle.de:7500/stream');
+//define('MEDIA_SERVER_STATUS', 'http://localhost:8500/status-json.xsl');
+define('MEDIA_SERVER_STATUS', 'http://schwarze-welle.de:7500/status-json.xsl');
 
 // Passwörter (unbedingt austauschen!)
 // Für das austauschen der Passwöter könnt ihr den paswd_generator.php benutzen den ihr im Verszeichnis /include findet.
@@ -177,4 +184,13 @@ define('MOTD_STATIC_MESSAGE', 'Willkommen auf im Grid! Bitte beachte unsere Rege
 define('MOTD_STATIC_TYPE', 'system');
 define('MOTD_STATIC_URL_TOS', BASE_URL . '/include/tos.php');
 define('MOTD_STATIC_URL_DMCA', BASE_URL . '/include/dmca.php');
+
+// Definiere verschiedene RSS-Feed-URLs getrennt durch Komma.
+$feed_urls = [
+    'http://opensimulator.org/viewgit/?a=rss-log&p=opensim', // Standard-Feed
+    'https://www.hypergridbusiness.com/feed'
+];
+
+// Maximale Anzahl der Einträge pro Feed
+$max_entries = 50;
 ?>

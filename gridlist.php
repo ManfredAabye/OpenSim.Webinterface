@@ -10,10 +10,33 @@ include 'include/header.php';
     <title>Grid List</title>
     <style>
         .listbody { font-family: Arial, sans-serif; }
-        .grid-list { list-style-type: none; padding: 0; }
-        .grid-item { display: flex; align-items: center; margin-bottom: 10px; }
-        .grid-link { margin-left: 10px; }
-        .search-bar { margin-bottom: 20px; }
+        .grid-list { 
+            list-style-type: none; 
+            padding: 10px; 
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;            
+        }
+        .grid-item { 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;            
+        }
+        .grid-link { 
+            margin-left: 10px; 
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .search-bar { 
+            margin-bottom: 20px; 
+        }
     </style>
     <script>
         async function loadGrids() {
@@ -31,13 +54,18 @@ include 'include/header.php';
 
                 const btn = document.createElement('button');
                 btn.className = 'grid-link';
-                btn.textContent = ' Grid Link ';
+                btn.textContent = 'Grid Link';
                 btn.onclick = () => window.location.href = `secondlife:///app/gridmanager/addgrid/${loginURI.trim()}`;
+                
+                // Lücke erzeugen
+                const spacer = document.createElement('div');
+                spacer.style.width = "20px";  // Breite der Lücke anpassen
 
                 const span = document.createElement('span');
                 span.textContent = gridName.trim();
 
                 li.appendChild(btn);
+                li.appendChild(spacer); // Füge den Abstandshalter ein
                 li.appendChild(span);
                 gridList.appendChild(li);
             });

@@ -4,15 +4,16 @@ include_once 'include/header.php';
 ?>
 
 <style>
-htmlBody {font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;} 
-main {width: 50%; margin: 2em auto; padding: 2em; background-color: #ffffff; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);} 
+body { font-family: Arial, sans-serif; background-color: <?= SECONDARY_COLOR ?>; padding: 10px; color: <?= PRIMARY_COLOR ?>; }
+
+main {width: 50%; margin: 2em auto; padding: 2em; background-color: #ffffff; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 5px;} 
 h2 {color: #333;} 
 form label {display: block; margin-bottom: 0.5em; color: #333;} 
 form input[type="text"], form input[type="password"] {width: 100%; padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;} 
 form input[type="submit"] {padding: 5px 20px; background-color: #007BFF; color: #ffffff; border: none; border-radius: 4px; cursor: pointer;} 
 form input[type="submit"]:hover {background-color: #0056b3;}
 </style>
-
+<body>
 <main>
     <h2><?php echo SITE_NAME; ?> Partner Overview</h2>
     <p>All information related to the Partner can be found here.</p>
@@ -89,5 +90,5 @@ form input[type="submit"]:hover {background-color: #0056b3;}
         <input type="submit" value="Update Partner">
     </form>
 </main>
-
+</body>
 <?php include_once 'include/footer.php'; ?>

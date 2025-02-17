@@ -28,24 +28,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true):
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
     <title>Anmeldung erforderlich</title>
+    <style>
+        /* Zusätzliche Stile für die Login-Karte */
+        .card {
+            background-color: rgba(255, 255, 255, 0.9); /* Leicht transparentes Weiß */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin: 20px auto; /* Zentrierung */
+        }
+        .card h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color); /* Verwende die primäre Farbe aus dem Header */
+        }
+        .card input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .card button {
+            width: 100%;
+            padding: 10px;
+            background-color:rgb(95, 45, 189);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color:rgb(17, 3, 138);
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Anmeldung</h2>
-    <?php if (isset($error)): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
-    <?php endif; ?>
-    <form method="post">
-        <label for="firstname">Vorname:</label>
-        <input type="text" id="firstname" name="firstname" required><br>
-        <label for="lastname">Nachname:</label>
-        <input type="text" id="lastname" name="lastname" required><br>
-        <label for="password">Passwort:</label>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit" name="login">Anmelden</button>
-    </form>
+    <div class="card">
+        <h2>Anmeldung</h2>
+        <?php if (isset($error)): ?>
+            <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+        <form method="post">
+            <input type="text" id="firstname" name="firstname" placeholder="Vorname" required>
+            <input type="text" id="lastname" name="lastname" placeholder="Nachname" required>
+            <input type="password" id="password" name="password" placeholder="Passwort" required>
+            <button type="submit" name="login">Anmelden</button>
+        </form>
+    </div>
 </body>
 </html>
 <?php
@@ -88,69 +126,80 @@ $data_stmt->execute();
 $data_result = $data_stmt->get_result();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<style>
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-#table {
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  border-collapse: collapse;
-  width: 15%;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: black;
-}
-</style>
+    <title>Datenbank Tabellen</title>
+    <style>
+        /* Zusätzliche Stile für die Tabellenansicht */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Leicht transparentes Weiß */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color); /* Verwende die primäre Farbe aus dem Header */
+        }
+        #table {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #customers {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #customers th, #customers td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #customers th {
+            background-color:rgb(56, 33, 173);
+            color: white;
+        }
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Tabellenauswahl und Anzeige</h1>
+        <form method="post">
+            <select name="table" id="table" onchange="this.form.submit()">
+                <?php foreach ($tables as $table): ?>
+                <option value="<?php echo htmlspecialchars($table); ?>" <?php if ($table == $selected_table) echo 'selected'; ?>>
+                    <?php echo htmlspecialchars($table); ?>
+                </option>
+                <?php endforeach; ?>
+            </select>
+        </form><br>
 
-<h1>Tabellenauswahl und Anzeige</h1>
-
-<form method="post">
-  <select name="table" id="table" onchange="this.form.submit()">
-    <?php foreach ($tables as $table): ?>
-    <option value="<?php echo htmlspecialchars($table); ?>" <?php if ($table == $selected_table) echo 'selected'; ?>>
-      <?php echo htmlspecialchars($table); ?>
-    </option>
-    <?php endforeach; ?>
-  </select>
-</form><br>
-
-<table id="customers">
-  <tr>
-    <?php foreach ($columns as $column): ?>
-    <th><?php echo htmlspecialchars($column); ?></th>
-    <?php endforeach; ?>
-  </tr>
-  <?php while ($row = $data_result->fetch_assoc()): ?>
-  <tr>
-    <?php foreach ($columns as $column): ?>
-    <td><?php echo htmlspecialchars($row[$column]); ?></td>
-    <?php endforeach; ?>
-  </tr>
-  <?php endwhile; ?>
-</table>
-
+        <table id="customers">
+            <tr>
+                <?php foreach ($columns as $column): ?>
+                <th><?php echo htmlspecialchars($column); ?></th>
+                <?php endforeach; ?>
+            </tr>
+            <?php while ($row = $data_result->fetch_assoc()): ?>
+            <tr>
+                <?php foreach ($columns as $column): ?>
+                <td><?php echo htmlspecialchars($row[$column]); ?></td>
+                <?php endforeach; ?>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
 </body>
 </html>
 

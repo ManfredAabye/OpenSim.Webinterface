@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     .bodyiar { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
     .containeriar { display: flex; flex-direction: column; min-height: 80vh; }
     header, footer { flex-shrink: 0; }
-    main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #fff; }
+    main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 20px;  }
     .form-container { background-color: #fff; color: black; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; width: 100%; }
     .image-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center; margin-top: 20px; }
     .image-card img { max-width: 100%; height: auto; border-radius: 8px; }

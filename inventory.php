@@ -62,20 +62,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,-25&icon_names=folder" />
     <style>
-        body{font-family:Arial,sans-serif;background-color:#f0f0f0;color:black;margin:0;padding:0;display:flex;flex-direction:column;height:100vh;}
-        .inventory-container,.form-container,.inventory-list,.folder-content{display:flex;flex-direction:column;}
-        .form-container{background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1);max-width:800px;width:100%;}
-        header,footer{flex-shrink:0;}
-        main{flex-grow:1;display:flex;justify-content:center;align-items:center;}
+        body { font-family: Arial, sans-serif; background-color: <?= SECONDARY_COLOR ?>; padding: 10px; color: <?= PRIMARY_COLOR ?>;}
+        .inventory-container,.form-container,.inventory-list,.folder-content{display:flex; flex-direction:column; }
+
+        .form-container{ background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1);max-width:800px;width:100%; }
+
         label{display:block;margin-bottom:8px;font-weight:bold;}
         input[type="text"],input[type="password"],input[type="number"],select,textarea{width:calc(100% - 20px);padding:8px;margin-bottom:15px;border:1px solid #ccc;border-radius:4px;}
         input[type="checkbox"]{margin-bottom:15px;}
@@ -92,6 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .folder span,.item span{font-size:36px;margin-right:10px;}
         .folder-content{margin-left:36px;}
     </style>
+    
     <script>
         function toggleFolderContent(folderID) {
             var folderContent = document.getElementById('folder-content-' + folderID);
@@ -102,9 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
-</head>
+
 <body>
-    <div class="inventory-container">
+    <div class="inventory-container" style="justify-content: center; align-items: center;">
         <div class="form-container">
             <h2><?php echo SITE_NAME; ?> Inventory List Overview</h2>
             <p>All information related to the Inventory List can be found here.</p>

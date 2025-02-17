@@ -96,7 +96,7 @@ function getImageByName($dir, $name) {
 ?>
 
 <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: black; margin: 0; padding: 0; display: flex; flex-direction: column; height: 100vh; }
+    body { font-family: Arial, sans-serif; color: black; margin: 0; padding: 0; display: flex; flex-direction: column; height: 100vh; }
     .containerlist { display: flex; flex-direction: column; flex: 1; }
     header, footer { flex-shrink: 0; }
     main { flex-grow: 1; display: flex; justify-content: center; align-items: center; }

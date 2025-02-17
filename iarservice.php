@@ -102,10 +102,9 @@ function loadiar($vorname, $nachname, $passwort, $datei, $dateiname) {
 ?>
 
 <style>
-    .bodyiar { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
+    main { flex-grow: 1; display: flex; justify-content: center; align-items: center; font-family: Arial, sans-serif; background-color: <?= SECONDARY_COLOR ?>; padding: 20px; color: <?= PRIMARY_COLOR ?>; }
     .containeriar { display: flex; flex-direction: column; min-height: 80vh; }
     header, footer { flex-shrink: 0; }
-    main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #fff; }
     .form-container { background-color: #fff; color: black; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; width: 100%; }
     h1 { font-size: 24px; margin-bottom: 20px; text-align: center; }
     label { display: block; margin-bottom: 8px; font-weight: bold; }

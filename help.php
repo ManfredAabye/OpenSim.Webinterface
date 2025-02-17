@@ -1,6 +1,8 @@
 <?php
 $title = "Help";
 include_once 'include/header.php';
+$txt1 = BASE_URL;
+$txt2 = GRID_PORT;
 ?>
 
 <main>
@@ -13,7 +15,7 @@ include_once 'include/header.php';
     <li>Starte den Viewer und öffne die Einstellungen.</li>
     <li>Suche den Bereich <strong>"Grids"</strong> oder <strong>"Grid-Manager"</strong>.</li>
     <li>Klicke auf <strong>"Neues Grid hinzufügen"</strong> oder eine ähnliche Option.</li>
-    <li>Gib die <strong>Login-URL</strong> deines Grids ein (z. B. <code><?php echo BASE_URL; ?>/</code>).</li>
+    <li>Gib die <strong>Login-URL</strong> deines Grids ein (z. B. <code><?php echo $txt1, $txt2; ?>/</code>).</li>
     <li>Klicke auf <strong>"Hinzufügen" oder "Speichern"</strong>.</li>
     <li>Wähle das Grid aus der Liste und gib deine Anmeldedaten ein.</li>
     <li>Klicke auf <strong>"Anmelden"</strong>, um das Grid zu betreten.</li>
@@ -37,7 +39,7 @@ include_once 'include/header.php';
     <li>Start the viewer and open the settings.</li>
     <li>Look for the <strong>"Grids"</strong> or <strong>"Grid Manager"</strong> section.</li>
     <li>Click on <strong>"Add New Grid"</strong> or a similar option.</li>
-    <li>Enter the <strong>login URL</strong> of your grid (e.g., <code><?php echo BASE_URL; ?>/</code>).</li>
+    <li>Enter the <strong>login URL</strong> of your grid (e.g., <code><?php echo $txt1, $txt2; ?>/</code>).</li>
     <li>Click <strong>"Add" or "Save"</strong>.</li>
     <li>Select the grid from the list and enter your login credentials.</li>
     <li>Click <strong>"Login"</strong> to enter the grid.</li>
@@ -49,6 +51,7 @@ include_once 'include/header.php';
     <li>If the viewer does not recognize the grid, check the server connection.</li>
     <li>Use the latest version of your viewer for best compatibility.</li>
 </ul>
+<br><br><br><br>
 </main>
 
 <?php include_once 'include/footer.php'; ?>

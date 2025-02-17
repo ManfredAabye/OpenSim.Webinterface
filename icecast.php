@@ -1,10 +1,14 @@
 <?php
+// define('MEDIA_SERVER', 'http://schwarze-welle.de:7500/stream');
+// define('MEDIA_SERVER_STATUS', 'http://schwarze-welle.de:7500/status-json.xsl');
+
 $title = "Media";
 include_once 'include/header.php';
+$media1 = MEDIA_SERVER;
 ?>
 
 <style>
-htmlBody {font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;} 
+html, body {font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;} 
 main {width: 50%; margin: 2em auto; padding: 2em; background-color: #ffffff; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);} 
 h2 {color: #333;} 
 #mediaplayer {display: flex; flex-direction: column; align-items: center;}
@@ -16,11 +20,8 @@ h2 {color: #333;}
 
 <main>
     <h2><?php echo SITE_NAME; ?> Media Overview</h2>
-    <p>All information related to the Media can be found here.</p>
-    <p>libshout Release 2.4.6</p>
-
     <div id="mediaplayer">
-        <audio id="audioPlayer" src="http://localhost:8500/stream" controls></audio>
+        <audio id="audioPlayer" src='<?php echo $media1; ?>' controls></audio>
         <button onclick="playAudio()">Play</button>
         <button onclick="stopAudio()">Stop</button>
         <div id="metadata">Metadata will be displayed here.</div>
@@ -39,23 +40,20 @@ function stopAudio() {
     audio.currentTime = 0;
 }
 
-// Function to fetch and display metadata
 function fetchMetadata() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:8500/status-json.xsl', true);
+    xhr.open('GET', 'getMetadata.php', true); // PHP-Datei aufrufen
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var data = JSON.parse(xhr.responseText);
-            var metadata = data.icestats.source.title || 'No metadata available';
-            document.getElementById('metadata').innerText = 'Now Playing: ' + metadata;
+            document.getElementById('metadata').innerText = 'Now Playing: ' + data.title;
         }
     };
     xhr.send();
 }
 
-// Fetch metadata every 10 seconds
 setInterval(fetchMetadata, 10000);
-fetchMetadata(); // Initial fetch
+fetchMetadata(); // Initialer Aufruf
 </script>
 
 <?php include_once 'include/footer.php'; ?>

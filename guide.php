@@ -19,48 +19,33 @@ if (mysqli_connect_errno()) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Destination Guide</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #b0c4de; padding: 10px; }
-        h1 { font-size: 16px; text-align: center; }
+<html>
+<title>Destination Guide</title>
+<style>
+    body { font-family: Arial, sans-serif; background-color: <?= SECONDARY_COLOR ?>; padding: 10px; color: <?= PRIMARY_COLOR ?>; }
+    
+    h1 { font-size: 16px; text-align: center; color: <?= PRIMARY_COLOR ?>; }
 
-        .button-container { text-align: center; margin-bottom: 15px; }
-        button { padding: 10px; margin: 5px; cursor: pointer; }
+    .button-container { text-align: center; margin-bottom: 15px; }
+    button { padding: 10px; margin: 5px; cursor: pointer; background-color: <?= PRIMARY_COLOR ?>; color: white; border: none; border-radius: 5px; }
 
-        .list-container { display: none; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 10px; }
-        .grid-container { display: none; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .list-container { display: none; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 10px; border-radius: 5px;}
+    .grid-container { display: none; flex-wrap: wrap; gap: 10px; justify-content: center; border-radius: 5px;}
 
-        .region-box { background: #ddd; padding: 10px; border-radius: 5px; display: flex; align-items: center; }
-        .region-icon { margin-right: 5px; font-size: 16px; }
+    .region-box { background: <?= HEADER_COLOR ?>; padding: 10px; border-radius: 5px; display: flex; align-items: center; color: <?= PRIMARY_COLOR ?>; }
+    .region-icon { margin-right: 5px; font-size: 16px; color: <?= PRIMARY_COLOR ?>; }
 
-        .grid-item { width: 23%; padding: 10px; border: 1px solid #aaa; background: white; text-align: center; border-radius: 5px; }
-        .grid-link { display: block; margin-top: 5px; padding: 5px; background: #0066cc; color: white; border-radius: 3px; text-decoration: none; }
+    .grid-item { width: 23%; padding: 10px; border: 1px solid #aaa; background: <?= HEADER_COLOR ?>; text-align: center; border-radius: 5px; color: <?= PRIMARY_COLOR ?>; }
+    /* .grid-link { display: block; margin-top: 5px; padding: 5px; background: <?= FOOTER_COLOR ?>; color: white; border-radius: 3px; text-decoration: none; } */
+    .grid-link { display: block; margin-top: 5px; padding: 5px; background: #0066cc; color: white; border-radius: 3px; text-decoration: none; }
 
-        .search-bar { width: 23%; padding: 10px; border: 1px solid #aaa; background: white; text-align: center; border-radius: 5px; }
+    .search-bar { width: 23%; padding: 10px; border: 1px solid #aaa; background: #0066cc; color: white; text-align: center; border-radius: 5px; }
 
-        .region-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.list-container2 {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 10px;
-    overflow-x: auto;
-}
+    .hop-buttons { display: flex; gap: 5px; margin-top: 5px; }
+    /* .hop-button { padding: 5px; background: <?= FOOTER_COLOR ?>; color: white; border-radius: 3px; text-decoration: none; } */
+    .hop-button { padding: 5px; background: #004080; color: white; border-radius: 5px; text-decoration: none; }
+</style>
 
-
-        .hop-buttons { display: flex; gap: 5px; margin-top: 5px; }
-        .hop-button { padding: 5px; background: #004080; color: white; border-radius: 3px; text-decoration: none; }
-    </style>
-</head>
 <body>
 
     <h1>Destination Guide</h1>
@@ -73,15 +58,15 @@ if (mysqli_connect_errno()) {
     </div>
 
     <!-- ##########################  JSON-Regionsliste ######################################## -->
-    <div id="jsonList" class="guidebody" style="display: <?= (GRIDLIST_VIEW == 'json') ? 'flex' : 'none' ?>; flex-wrap: wrap; gap: 10px; justify-content: flex-start;">
+    <div id="jsonList" class="guidebody" style="display: <?= (GRIDLIST_VIEW == 'json') ? 'flex' : 'none' ?>; flex-wrap: wrap; gap: 10px; justify-content: flex-start; border-radius: 5px; padding: 10px;">
         <?php foreach ($data as $category => $destinations): ?>
             <fieldset style='flex: 1; min-width: 250px; max-width: 350px;'>
                 <legend><?= htmlspecialchars(ucfirst($category)) ?></legend>
-                <div class='region-container' style='display: flex; flex-wrap: wrap; gap: 10px;'>
+                <div class='region-container' style='display: flex; flex-wrap: wrap; gap: 10px; border-radius: 5px; padding: 10px;'>
                     <?php foreach ($destinations as $destination): ?>
                         <div class="region-box">
                             <a href="<?= htmlspecialchars($destination['url']) ?>" target="_blank">
-                                <img src="<?= htmlspecialchars($destination['image']) ?>" alt="<?= htmlspecialchars($destination['name']) ?>" width="50" height="50" style="border-radius:5px; margin-right:10px;">
+                                <img src="<?= htmlspecialchars($destination['image']) ?>" alt="<?= htmlspecialchars($destination['name']) ?>" width="50" height="50" style="border-radius:5px; margin-right:10px; padding: 10px;">
                             </a>
                             <span><?= htmlspecialchars($destination['name']) ?></span>
                         </div>
@@ -93,7 +78,8 @@ if (mysqli_connect_errno()) {
 
 
     <!-- ########################################  Datenbank-Regionsliste ######################################## -->
-    <div id="databaseList" class="list-container2" style="display: <?= (GRIDLIST_VIEW == 'database') ? 'flex' : 'none' ?>;">
+     <!-- todo: Abstand hinzufügen. -->
+    <div id="databaseList" class="list-container" style="padding: 10px; display: <?= (GRIDLIST_VIEW == 'database') ? 'flex' : 'none' ?>;">
         <?php
         $sql = "SELECT regionName, serverIP, serverPort FROM regions ORDER BY last_seen DESC LIMIT 10";
         $resultregions = mysqli_query($con, $sql);
@@ -106,7 +92,7 @@ if (mysqli_connect_errno()) {
             // Link für den "Hop"-Button
             $regionslink = "hop://$ip:$port/$region/128/128/23";
 
-            echo '<div class="region-box" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 10px;">';
+            echo '<div class="region-box" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 10px; border-radius: 5px; padding: 10px;">';
             // Button mit Regionsname
             echo "<button style='margin-bottom: 5px;'>$region</button>";
             // Button mit "Hop"
