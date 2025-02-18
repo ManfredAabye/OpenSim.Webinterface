@@ -19,64 +19,149 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## Informationen
 
-### Seiten
-* aboutinformation.php - Informationen und Besitzerdaten.  **Funktioniert**
-* avatarpicker.php - Einen Avatar auswählen.
-* destinations - Besondere Zielorte des Grids.  **Funktioniert**
-* economycashbook.php - Ein kleines Kassenbuch für einnahmen ausgaben über den MoneyServer. **Funktioniert**
-* gridstatus.php - Der Gridstatus des Grids.  **Funktioniert**
-* gridstatusrss.php - RSS feeds über den Gridstatus des Grids.
-* guide.php - Besondere Zielorte des Grids der über den Viewer abgerufen wird.  **Funktioniert**
-* help.php - Hilfestellung wie man ins Grid kommt etc.  **Funktioniert**
-* index.php - Eine Hilfsseite mit der man die einzelnen Seiten aufrufen kann.  **Funktioniert**
-* maptile.php - Eine Karte aufrufen.  **Funktioniert**
-* partner.php - Partnerschaften mit anderen Usern eingehen oder beenden.
-* passwordreset.php - Ein neues Passwort einstellen.
-* registeruser.php - Eine Benutzerregistration.
-* searchservice.php - Suchfunktion für Orte oder mehr.
-* welcomesplashpage.php - Die Welcome Splash Seite mit Informationen zum Grid.  **Funktioniert**
-* listinventar.php - Listet das Inventar auf.  **Funktioniert**
-* iarservice.php - Inventar Sichern oder IAR hochladen.  **Funktioniert**
+* aboutinformation.php	
+* avatarpicker.php	
+* economycashbook.php	
+* gridlist.php	
+* gridstatus.php	
+* gridstatusrss.php	
+* guide.php	
+* help.php	
+* iarservice.php	
+* icecast.php	
+* index.html	
+* index.php	
+* inventory.php	
+* listinventar.php	
+* maptile.php	
+* message.php	
+* mute.php	
+* mutelist.php	
+* OpenSimExample.ini	
+* partner.php	
+* passwordreset.php	
+* picreader.php	
+* registeruser.php	
+* RobustExample.ini	
+* searchservice.php	
+* tabledata.php	
+* welcomesplashpage.php	
+	
+* cache	00000000-0000-0000-0000-000000000001.jpg
+* cache	00000000-0000-0000-0000-000000000002.jpg
+* cache	index.html
+	
+* destinations	index.html
+* destinations	Infopunkt1.png
+* destinations	Infopunkt2.png
+* destinations	Infopunkt3.png
+* destinations	Infopunkt4.png
+* destinations	Infopunkt5.png
+* destinations	Infopunkt6.png
+* destinations	Infopunkt7.png
+* destinations	Infopunkt8.png
+* destinations	Infopunkt9.png
 
-### destinations - Bilder für die Guide/Destinations.
-* destinations/Infopunkt1.png
-* destinations/Infopunkt2.png
-* destinations/Infopunkt3.png
-* destinations/Infopunkt4.png
-* destinations/Infopunkt5.png
-* destinations/Infopunkt6.png
-* destinations/Infopunkt7.png
-* destinations/Infopunkt8.png
-* destinations/Infopunkt9.png
+* images	1_001.png
+* images	2_001.png
+* images	3_001.png
+* images	4_001.png
+* images	5_001.png
+* images	6_001.png
+* images	7_001.png
+* images	8_001.png
+* images	9_001.png
+* images	index.html
 
-### images - welcomesplashpage Hintergrundbilder.
-* images/1_001.png
-* images/2_001.png
-* images/3_001.png
-* images/4_001.png
-* images/5_001.png
-* images/6_001.png
-* images/7_001.png
-* images/8_001.png
-* images/9_001.png
+* include	config.example.php
+* include	configurator.php.offline
+* include	destinations.json
+* include	dmca.php
+* include	favicon.ico
+* include	favicon.png
+* include	footer.php
+* include	gridlist.csv
+* include	header.php
+* include	image.php
+* include	index.html
+* include	Metavers150.png
+* include	paswd_generator.php
+* include	tos.php
+* include	webseite.jpg
+	
+* outfits	default.jpg
 
-### include - Diverse Einstellungen für das Grid und das Webinterface.
-* include/config.php
-* include/destinations.json
-* include/favicon.ico
-* include/favicon.png
-* include/footer.php
-* include/header.php
-* include/index.html
-* include/Metavers150.png
+* pics	00000000-0000-0000-0000-000000000001.jpg
+* pics	00000000-0000-0000-0000-000000000002.jpg
+* pics	background.jpg
+* pics	default.jpg
+* pics	index.html
+* pics	logo.png
+* pics	mhpann.png
+* pics	transparent.png
+* pics	webinterface1.jpg
+* pics	webinterface1.png
+* pics	webinterface2.jpg
+* pics	webinterface3.jpg
+* pics	webseite.jpg
 
-### pics - Diverse Bilder und Icons
-* pics/background.jpg
-* pics/index.html
-* pics/logo.png
-* pics/mhpann.png
-* pics/transparent.png
+## 12 Seiten die im OpenSimulator konfigurierbar sind	
 
+* Login Service:	
+* MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php";	
+* SearchURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/searchservice.php";	
+* DestinationGuide = "${Const|BaseURL}/webinterface/guide.php"	
+* Grid Info Service:	
+* AvatarPicker = "${Const|BaseURL}/webinterface/avatarpicker.php"	
+* welcome = ${Const|BaseURL}/webinterface/welcomesplashpage.php	
+* about = ${Const|BaseURL}/webinterface/aboutinformation.php	
+* register = ${Const|BaseURL}/webinterface/registeruser.php	
+* help = ${Const|BaseURL}/webinterface/help.php	
+* password = ${Const|BaseURL}/webinterface/passwordreset.php	
+* partner = ${Const|BaseURL}/webinterface/partner.php	
+* GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php	
+* GridStatusRSS = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatusrss.php	
+
+## Webseiten Adressen die im Firestorm Viewer angezeigt werden:	
+* Grid name	
+* Grid URI	
+* Login page	
+* Helper URI	
+* Grid Website	
+* Grid Support	
+* Grid Registration	
+* Grid Password URI	
+* Grid Search	
+* Grid Message URI	
+
+## Benötigte Dateien:	
+* maptile.php	
+* searchservice.php	
+* guide.php	
+* avatarpicker.php	
+* welcomesplashpage.php	
+* aboutinformation.php	
+* registeruser.php	
+* help.php	
+* passwordreset.php	
+* partner.php	
+* gridstatus.php	
+* gridstatusrss.php	
+
+## Dazu werden folgende Resourcen benötigt	
+* include	config.example.php umbenennen in config.php
+* include	favicon.ico oder eigenes Icon
+* include	header.php oder eigenen header
+* include	footer.php oder eigenen footer
+* include	gridlist.csv
+* include	destinations.json
+
+* Und die Verzeichnisse:	
+* images - Die Bilder für eure Login Page bitte macht alle Bilder gleichgroß.	
+* destinations - Eure eigenen Regionsbilder.	
+* pics - Diverse Bilder die sonst niergens reinpassen wie Logo und Wallpaper.	
+
+Alle anderen Dateien oder Verzeichnisse können auch gelöscht werden.	
 ---
 
 ## TODO
