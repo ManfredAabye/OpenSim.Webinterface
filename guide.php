@@ -48,7 +48,7 @@ if (mysqli_connect_errno()) {
 
 <body>
 
-    <h1>Destination Guide</h1>
+    <h1><?php echo SITE_NAME; ?> Destination Guide</h1>
 
     <!-- Auswahl Buttons -->
     <div class="button-container">
