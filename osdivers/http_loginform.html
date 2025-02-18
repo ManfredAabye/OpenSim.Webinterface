@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>OpenSim Login</title>
+    <style>
+        /* Allgemeine Stile */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+    
+        /* Login-Box */
+        #login_box {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+    
+        /* Formular-Felder */
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+    
+        legend {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            padding: 0 5px;
+        }
+    
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+    
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    
+        /* Checkbox */
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    
+        label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    
+        /* Submit-Button */
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    
+        /* Verbindungsnachricht */
+        #connecting {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    
+        /* Hilfelinks */
+        #helplinks {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+    
+        #helplinks a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    
+        #helplinks a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Channel-Info */
+        #channelinfo {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    
+        /* Fehlermeldungen */
+        #message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="login_box">
+        <form action="/go.cgi" method="POST" id="login-form">
+            <div id="message">[$errors]</div>
+            <fieldset id="firstname">
+                <legend>First Name:</legend>
+                <input type="text" id="firstname_input" name="username" value="[$firstname]" required>
+            </fieldset>
+            <fieldset id="lastname">
+                <legend>Last Name:</legend>
+                <input type="text" name="lastname" value="[$lastname]" required>
+            </fieldset>
+            <fieldset id="password">
+                <legend>Password:</legend>
+                <input type="password" name="password" value="[$password]" required>
+                <label>
+                    <input type="checkbox" name="remember_password"> Remember password
+                </label>
+            </fieldset>
+            <input type="hidden" name="show_login_form" value="FALSE">
+            <input type="hidden" name="method" value="login">
+            <input type="hidden" name="grid" value="[$grid]">
+            <input type="hidden" name="region" value="[$region]">
+            <input type="hidden" name="location" value="[$location]">
+            <input type="hidden" name="channel" value="[$channel]">
+            <input type="hidden" name="version" value="[$version]">
+            <input type="hidden" name="lang" value="[$lang]">
+            <input type="submit" value="Connect">
+            <div id="connecting" style="visibility:hidden">Connecting...</div>
+            <div id="helplinks">
+                <a href="/create-account" target="_blank">Create new account</a> | 
+                <a href="/forgot-password" target="_blank">Forgot password?</a>
+            </div>
+            <div id="channelinfo">[$channel] | [$version]=[$lang]</div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('firstname_input').focus();
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('connecting').style.visibility = 'visible';
+            setTimeout(() => {
+                this.submit();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
