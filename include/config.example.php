@@ -10,6 +10,15 @@ define('DB_ASSET_NAME', 'your_database');
 define('BASE_URL', 'http://yourdomain.com');
 define('SITE_NAME', 'Dein Grid Name');
 
+// Konfigurationsoption für den Banker
+define('BANKER_UUID', '00000000-0000-0000-0000-000000000000');
+
+// RemoteAdmin
+define('REMOTEADMIN_URL', 'localhost');
+define('REMOTEADMIN_PORT', 8002);
+define('REMOTEADMIN_HTTPAUTHUSERNAME', 'HTTPAUTHUSERNAME');
+define('REMOTEADMIN_HTTPAUTHPASSWORD', 'HTTPAUTHPASSWORD');
+
 // Asset Bilder
 define('ASSETPFAD', 'cache/');
 define('ASSET_FEHLT', ASSETPFAD . '00000000-0000-0000-0000-000000000002');
@@ -38,6 +47,7 @@ $registration_passwords_listinventar = ["3PULfnM9ITSIn2Z5", "8cEQnf1hmkz9knMA", 
 $registration_passwords_picreader = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 $registration_passwords_mutelist = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 $registration_passwords_avatarpicker = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
+$registration_passwords_economy = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 
 // Weitere Seitenadressen
 define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');

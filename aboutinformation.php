@@ -3,7 +3,20 @@ $title = "About";
 include_once 'include/header.php';
 ?>
 
-<main>
+<style>
+   .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      Color:rgb(31, 31, 31);
+      background-color:rgb(238, 241, 241);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   }
+</style>
+
+<main class="container">
     <h1>Über Uns</h1>
     <p>Willkommen auf unserer <?php echo SITE_NAME; ?> Webseite! Hier finden Sie Informationen über unser Unternehmen und unsere Dienstleistungen.</p>
 
@@ -92,5 +105,5 @@ include_once 'include/header.php';
         For more information about OpenSimulator, please visit the official wiki page: <a href="http://opensimulator.org/wiki/Main_Page/de" target="_blank">OpenSimulator Wiki</a>.
     </p>
 </main>
-
+<br><br><br><br>
 <?php include_once 'include/footer.php'; ?>

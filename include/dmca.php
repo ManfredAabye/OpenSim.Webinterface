@@ -8,8 +8,8 @@ include 'header.php';
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      Color:rgb(176, 174, 174);
-      background-color:rgb(27, 27, 27);
+      Color:rgb(31, 31, 31);
+      background-color:rgb(238, 241, 241);
       border: 1px solid #ddd;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -182,5 +182,5 @@ $finalHTML = simpleMarkdownToHTML($tosText);
 // 3️⃣ HTML ausgeben
 echo "<div class='markdown-content'>$finalHTML</div>";
 ?>
-
-<?php include 'include/footer.php'; ?>
+<br><br><br><br>
+<?php include 'footer.php'; ?>

@@ -17,70 +17,69 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ---
 
-# Informationen
+## Informationen
 
-## 12 Seiten die im OpenSimulator konfigurierbar sind	
+### Seiten
+* aboutinformation.php - Informationen und Besitzerdaten.  **Funktioniert**
+* avatarpicker.php - Einen Avatar auswählen.
+* destinations - Besondere Zielorte des Grids.  **Funktioniert**
+* economycashbook.php - Ein kleines Kassenbuch für einnahmen ausgaben über den MoneyServer. **Funktioniert**
+* gridstatus.php - Der Gridstatus des Grids.  **Funktioniert**
+* gridstatusrss.php - RSS feeds über den Gridstatus des Grids.
+* guide.php - Besondere Zielorte des Grids der über den Viewer abgerufen wird.  **Funktioniert**
+* help.php - Hilfestellung wie man ins Grid kommt etc.  **Funktioniert**
+* index.php - Eine Hilfsseite mit der man die einzelnen Seiten aufrufen kann.  **Funktioniert**
+* maptile.php - Eine Karte aufrufen.  **Funktioniert**
+* partner.php - Partnerschaften mit anderen Usern eingehen oder beenden.
+* passwordreset.php - Ein neues Passwort einstellen.
+* registeruser.php - Eine Benutzerregistration.
+* searchservice.php - Suchfunktion für Orte oder mehr.
+* welcomesplashpage.php - Die Welcome Splash Seite mit Informationen zum Grid.  **Funktioniert**
+* listinventar.php - Listet das Inventar auf.  **Funktioniert**
+* iarservice.php - Inventar Sichern oder IAR hochladen.  **Funktioniert**
 
-* Login Service:	
-* MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php";	
-* SearchURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/searchservice.php";	
-* DestinationGuide = "${Const|BaseURL}/webinterface/guide.php"	
-* Grid Info Service:	
-* AvatarPicker = "${Const|BaseURL}/webinterface/avatarpicker.php"	
-* welcome = ${Const|BaseURL}/webinterface/welcomesplashpage.php	
-* about = ${Const|BaseURL}/webinterface/aboutinformation.php	
-* register = ${Const|BaseURL}/webinterface/registeruser.php	
-* help = ${Const|BaseURL}/webinterface/help.php	
-* password = ${Const|BaseURL}/webinterface/passwordreset.php	
-* partner = ${Const|BaseURL}/webinterface/partner.php	
-* GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php	
-* GridStatusRSS = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatusrss.php	
+### destinations - Bilder für die Guide/Destinations.
+* destinations/Infopunkt1.png
+* destinations/Infopunkt2.png
+* destinations/Infopunkt3.png
+* destinations/Infopunkt4.png
+* destinations/Infopunkt5.png
+* destinations/Infopunkt6.png
+* destinations/Infopunkt7.png
+* destinations/Infopunkt8.png
+* destinations/Infopunkt9.png
 
-## Webseiten Adressen die im Firestorm Viewer angezeigt werden:	
-* Grid name	
-* Grid URI	
-* Login page	
-* Helper URI	
-* Grid Website	
-* Grid Support	
-* Grid Registration	
-* Grid Password URI	
-* Grid Search	
-* Grid Message URI	
+### images - welcomesplashpage Hintergrundbilder.
+* images/1_001.png
+* images/2_001.png
+* images/3_001.png
+* images/4_001.png
+* images/5_001.png
+* images/6_001.png
+* images/7_001.png
+* images/8_001.png
+* images/9_001.png
 
-## Benötigte Dateien:	
-* maptile.php	
-* searchservice.php	
-* guide.php	
-* avatarpicker.php	
-* welcomesplashpage.php	
-* aboutinformation.php	
-* registeruser.php	
-* help.php	
-* passwordreset.php	
-* partner.php	
-* gridstatus.php	
-* gridstatusrss.php	
+### include - Diverse Einstellungen für das Grid und das Webinterface.
+* include/config.php
+* include/destinations.json
+* include/favicon.ico
+* include/favicon.png
+* include/footer.php
+* include/header.php
+* include/index.html
+* include/Metavers150.png
 
-## Dazu werden folgende Resourcen benötigt	
-* include	config.example.php umbenennen in config.php
-* include	favicon.ico oder eigenes Icon
-* include	header.php oder eigenen header
-* include	footer.php oder eigenen footer
-* include	gridlist.csv
-* include	destinations.json
+### pics - Diverse Bilder und Icons
+* pics/background.jpg
+* pics/index.html
+* pics/logo.png
+* pics/mhpann.png
+* pics/transparent.png
 
-* Und die Verzeichnisse:	
-* images - Die Bilder für eure Login Page bitte macht alle Bilder gleichgroß.	
-* destinations - Eure eigenen Regionsbilder.	
-* pics - Diverse Bilder die sonst niergens reinpassen wie Logo und Wallpaper.	
-
-Alle anderen Dateien oder Verzeichnisse können auch gelöscht werden.	
 ---
 
 ## TODO
-
-15.02.2025 MuteList Service ist hinzugekommen hiermit kann man sehen und einstellungen vornehmen. Passwörter sind erweitert worden bitte die config.php anpassen.
 
 14.02.2025 Mit der neuen guide.php lassen sich ausgesuchte Regionen präsentieren, alle Regionen im Grid anwählen, bis zu 293 Grids direkt hin teleportieren.
 

@@ -1,0 +1,141 @@
+aboutinformation.php
+avatarpicker.php
+cache
+destinations
+dirtext.txt
+economycashbook.php
+gridlist.php
+gridstatus.php
+gridstatusrss.php
+guide.php
+help.php
+iarservice.php
+icecast.php
+images
+include
+index.html
+index.php
+inventory.php
+listinventar.php
+maptile.php
+message.php
+mute.php
+mutelist.php
+OpenSimExample.ini
+outfits
+partner.php
+passwordreset.php
+picreader.php
+pics
+registeruser.php
+RobustExample.ini
+searchservice.php
+tabledata.php
+welcomesplashpage.php
+
+cache\00000000-0000-0000-0000-000000000001.jpg
+cache\00000000-0000-0000-0000-000000000002.jpg
+cache\index.html
+
+destinations\index.html
+destinations\Infopunkt1.png
+destinations\Infopunkt2.png
+destinations\Infopunkt3.png
+destinations\Infopunkt4.png
+destinations\Infopunkt5.png
+destinations\Infopunkt6.png
+destinations\Infopunkt7.png
+destinations\Infopunkt8.png
+destinations\Infopunkt9.png
+
+images\1_001.png
+images\2_001.png
+images\3_001.png
+images\4_001.png
+images\5_001.png
+images\6_001.png
+images\7_001.png
+images\8_001.png
+images\9_001.png
+images\index.html
+
+include\config.example.php
+include\configurator.php.offline
+include\destinations.json
+include\dmca.php
+include\favicon.ico
+include\favicon.png
+include\footer.php
+include\gridlist.csv
+include\header.php
+include\image.php
+include\index.html
+include\Metavers150.png
+include\paswd_generator.php
+include\tos.php
+include\webseite.jpg
+
+outfits\default.jpg
+
+pics\00000000-0000-0000-0000-000000000001.jpg
+pics\00000000-0000-0000-0000-000000000002.jpg
+pics\background.jpg
+pics\default.jpg
+pics\index.html
+pics\logo.png
+pics\mhpann.png
+pics\transparent.png
+pics\webinterface1.jpg
+pics\webinterface1.png
+pics\webinterface2.jpg
+pics\webinterface3.jpg
+pics\webseite.jpg
+
+12 Seiten die im OpenSimulator konfigurierbar sind
+
+Login Service:
+MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php";
+SearchURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/searchservice.php";
+DestinationGuide = "${Const|BaseURL}/webinterface/guide.php"
+Grid Info Service:
+AvatarPicker = "${Const|BaseURL}/webinterface/avatarpicker.php"
+welcome = ${Const|BaseURL}/webinterface/welcomesplashpage.php
+about = ${Const|BaseURL}/webinterface/aboutinformation.php
+register = ${Const|BaseURL}/webinterface/registeruser.php
+help = ${Const|BaseURL}/webinterface/help.php
+password = ${Const|BaseURL}/webinterface/passwordreset.php
+partner = ${Const|BaseURL}/webinterface/partner.php
+GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php
+GridStatusRSS = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatusrss.php
+
+Webseiten Adressen die im Firestorm Viewer angezeigt werden:
+Grid name
+Grid URI
+Login page
+Helper URI
+Grid Website
+Grid Support
+Grid Registration
+Grid Password URI
+Grid Search
+Grid Message URI
+
+TODO: 
+401 	Unauthorized 	Der Benutzer benötigt eine Autorisierung, ohne die er keinen Zugriff auf die Ressource hat.
+403 	Forbidden 	Nicht öffentlicher Bereich, auf den der Benutzer keinen Zugriff hat.
+404 	Not Found 	Die Ressource wurde unter dem angegebenen URI nicht gefunden.
+410 	Gone 	Unter dem angegebenen URI ist keine Ressource mehr erreichbar und es ist keine Weiterleitungsadresse bekannt.
+
+401.html für die Seite "401 - Unauthorized"
+
+403.html für die Seite "403 - Forbidden"
+
+404.html für die Seite "404 - Not Found"
+
+410.html für die Seite "410 - Gone"
+
+htaccess
+ErrorDocument 401 /error/401.html
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+ErrorDocument 410 /error/410.html

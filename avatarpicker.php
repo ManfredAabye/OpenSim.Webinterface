@@ -3,7 +3,7 @@ session_start();
 
 $title = "AvatarPicker Service";
 include_once 'include/header.php';
-include_once 'config.php'; // Einbinden der config.php
+include_once 'include/config.php'; // Einbinden der config.php
 
 // Fehlerberichterstattung aktivieren
 error_reporting(E_ALL);

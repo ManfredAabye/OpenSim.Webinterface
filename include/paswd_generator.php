@@ -14,45 +14,48 @@ function generatePassword($length = 16) {
 
 // Generiere Passwörter für das Register-Array
 $registration_passwords_register = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
-// Generiere Passwörter für das Reset-Array
 $registration_passwords_reset = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
-// Generiere Passwörter für das Partner-Array
 $registration_passwords_partner = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
-// Generiere Passwörter für das inventory-Array
 $registration_passwords_inventory = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
-// Generiere Passwörter für das datatable-Array
 $registration_passwords_datatable = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
 $registration_passwords_listinventar = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
 $registration_passwords_picreader = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
 $registration_passwords_mutelist = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
-
 $registration_passwords_avatarpicker = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
+$registration_passwords_economy = [generatePassword(), generatePassword(), generatePassword(), generatePassword(), generatePassword()];
 ?>
 
-<!DOCTYPE html>
-<html lang="de">
-<body>
+
+<html>
+<style>
+   .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      Color:rgb(31, 31, 31);
+      background-color:rgb(238, 241, 241);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   }
+</style>
+
+<main class="container">
     <h1>Generierte Passwörter</h1>
     <pre>
 <?php
-echo '$registration_passwords_register = ["' . implode('", "', $registration_passwords_register) . '"];' . PHP_EOL;
-echo '$registration_passwords_reset = ["' . implode('", "', $registration_passwords_reset) . '"];' . PHP_EOL;
-echo '$registration_passwords_partner = ["' . implode('", "', $registration_passwords_partner) . '"];' . PHP_EOL;
-echo '$registration_passwords_inventory = ["' . implode('", "', $registration_passwords_inventory) . '"];' . PHP_EOL;
-echo '$registration_passwords_datatable = ["' . implode('", "', $registration_passwords_datatable) . '"];' . PHP_EOL;
-echo '$registration_passwords_listinventar = ["' . implode('", "', $registration_passwords_listinventar) . '"];' . PHP_EOL;
-echo '$registration_passwords_picreader = ["' . implode('", "', $registration_passwords_picreader) . '"];' . PHP_EOL;
-echo '$registration_passwords_mutelist = ["' . implode('", "', $registration_passwords_mutelist) . '"];' . PHP_EOL;
-echo '$registration_passwords_avatarpicker = ["' . implode('", "', $registration_passwords_avatarpicker) . '"];' . PHP_EOL;
+    echo '$registration_passwords_register = ["' . implode('", "', $registration_passwords_register) . '"];' . PHP_EOL;
+    echo '$registration_passwords_reset = ["' . implode('", "', $registration_passwords_reset) . '"];' . PHP_EOL;
+    echo '$registration_passwords_partner = ["' . implode('", "', $registration_passwords_partner) . '"];' . PHP_EOL;
+    echo '$registration_passwords_inventory = ["' . implode('", "', $registration_passwords_inventory) . '"];' . PHP_EOL;
+    echo '$registration_passwords_datatable = ["' . implode('", "', $registration_passwords_datatable) . '"];' . PHP_EOL;
+    echo '$registration_passwords_listinventar = ["' . implode('", "', $registration_passwords_listinventar) . '"];' . PHP_EOL;
+    echo '$registration_passwords_picreader = ["' . implode('", "', $registration_passwords_picreader) . '"];' . PHP_EOL;
+    echo '$registration_passwords_mutelist = ["' . implode('", "', $registration_passwords_mutelist) . '"];' . PHP_EOL;
+    echo '$registration_passwords_avatarpicker = ["' . implode('", "', $registration_passwords_avatarpicker) . '"];' . PHP_EOL;
+    echo '$registration_passwords_economy = ["' . implode('", "', $registration_passwords_economy) . '"];' . PHP_EOL;
 ?>
     </pre>
-</body>
+</main>
 </html>
 <?php include_once 'footer.php'; ?>

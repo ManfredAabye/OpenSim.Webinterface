@@ -4,8 +4,20 @@ include_once 'include/header.php';
 $txt1 = BASE_URL;
 $txt2 = GRID_PORT;
 ?>
+<style>
+   .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      Color:rgb(31, 31, 31);
+      background-color:rgb(238, 241, 241);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   }
+</style>
 
-<main>
+<main class="container">
 <h1>OpenSim Viewer mit einem Grid verbinden</h1>
 
 <h2>Schritt-für-Schritt Anleitung (Deutsch)</h2>

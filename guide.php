@@ -132,7 +132,7 @@ if (mysqli_connect_errno()) {
                 echo '<div class="grid-item">';
                 echo "<span>$gridName</span>";
                 echo '<div class="hop-buttons">';
-                echo "<a href='$gridlink1' class='grid-link' target='_blank' style='width: 60%; text-align: center;'>Viewer Grid Ziel</a>";
+                echo "<a href='$gridlink1' class='grid-link' target='_blank' style='width: 60%; text-align: center;'>Viewer Grid Eintrag</a>";
                 echo "<a href='$gridlink2' class='grid-link' target='_blank' style='width: 100%; text-align: center;'>Hop $gridName</a>";
                 echo '</div>';
                 echo '</div>';
