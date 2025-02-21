@@ -50,19 +50,19 @@ $registration_passwords_avatarpicker = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", 
 $registration_passwords_economy = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 
 // Weitere Seitenadressen
-define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
-define('ECONOMY_PAGE', BASE_URL . '/economycashbook.php');
-define('ABOUT_PAGE', BASE_URL . '/aboutinformation.php');
-define('REGISTER_PAGE', BASE_URL . '/registeruser.php');
-define('HELP_PAGE', BASE_URL . '/help.php');
-define('PASSWORD_PAGE', BASE_URL . '/passwordreset.php');
-define('AVATAR_PAGE', BASE_URL . '/avatarpicker.php');
-define('GRIDSTATUS_PAGE', BASE_URL . '/gridstatus.php');
-define('GRIDSTATUSRSS_PAGE', BASE_URL . '/gridstatusrss.php');
-define('GUIDE_PAGE', BASE_URL . '/guide.php');
-define('MAPTILE_PAGE', BASE_URL . '/maptile.php');
-define('PARTNER_PAGE', BASE_URL . '/partner.php');
-define('SEARCHSERVICE_PAGE', BASE_URL . '/searchservice.php');
+// define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
+// define('ECONOMY_PAGE', BASE_URL . '/economycashbook.php');
+// define('ABOUT_PAGE', BASE_URL . '/aboutinformation.php');
+// define('REGISTER_PAGE', BASE_URL . '/registeruser.php');
+// define('HELP_PAGE', BASE_URL . '/help.php');
+// define('PASSWORD_PAGE', BASE_URL . '/passwordreset.php');
+// define('AVATAR_PAGE', BASE_URL . '/avatarpicker.php');
+// define('GRIDSTATUS_PAGE', BASE_URL . '/gridstatus.php');
+// define('GRIDSTATUSRSS_PAGE', BASE_URL . '/gridstatusrss.php');
+// define('GUIDE_PAGE', BASE_URL . '/guide.php');
+// define('MAPTILE_PAGE', BASE_URL . '/maptile.php');
+// define('PARTNER_PAGE', BASE_URL . '/partner.php');
+// define('SEARCHSERVICE_PAGE', BASE_URL . '/searchservice.php');
 
 // Farben der Webseite
 $colorSchemes = array(
