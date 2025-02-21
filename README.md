@@ -81,6 +81,8 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## TODO
 
+21.02.2025 Avatar Registration funktioniert jetzt soweit und neues Passwort setzen funktioniert teilweise.
+
 14.02.2025 Mit der neuen guide.php lassen sich ausgesuchte Regionen präsentieren, alle Regionen im Grid anwählen, bis zu 293 Grids direkt hin teleportieren.
 
 14.02.2025 With the new guide.php you can present selected regions, select all regions in the grid, and teleport directly to up to 293 grids.
