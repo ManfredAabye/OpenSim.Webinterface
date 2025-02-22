@@ -1,4 +1,12 @@
 <?php
+
+// Globale Variablen verwenden
+global $osVorname, $osNachname, $osEMail, $osHash, $osSalt, $benutzeruuid, $inventoryuuid, $neuparentFolderID, $neuHauptFolderID, $osDatum, $pdo;
+
+//$pdo = new PDO("mysql:host=$CONF_db_server;dbname=$CONF_db_database", $CONF_db_user, $CONF_db_pass);
+$pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+
+
 // Avatar eintragen
 $neuer_user = array();
 $neuer_user['PrincipalID'] = $benutzeruuid;
@@ -46,7 +54,7 @@ $statement->execute($neuer_GridUser);
 // Inventarverzeichnisse erstellen
 
 // Ordner Textures
-$Texturesuuid = uuidv4();
+$Texturesuuid = generateUUID();
 
 $verzeichnistextur = array();
 $verzeichnistextur['folderName'] = 'Textures';
@@ -60,7 +68,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnistextur);
 
 // Ordner Sounds
-$Soundsuuid = uuidv4();
+$Soundsuuid = generateUUID();
 
 $verzeichnisSounds = array();
 $verzeichnisSounds['folderName'] = 'Sounds';
@@ -74,7 +82,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisSounds);
 
 // Ordner Calling Cards
-$CallingCardsuuid = uuidv4();
+$CallingCardsuuid = generateUUID();
 
 $verzeichnisCallingCards = array();
 $verzeichnisCallingCards['folderName'] = 'Calling Cards';
@@ -88,7 +96,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisCallingCards);
 
 // Ordner Landmarks
-$Landmarksuuid = uuidv4();
+$Landmarksuuid = generateUUID();
 
 $verzeichnisLandmarks = array();
 $verzeichnisLandmarks['folderName'] = 'Landmarks';
@@ -102,7 +110,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisLandmarks);
 
 // Ordner My Inventory
-$MyInventoryuuid = uuidv4();
+$MyInventoryuuid = generateUUID();
 
 $verzeichnisMyInventory = array();
 $verzeichnisMyInventory['folderName'] = 'My Inventory';
@@ -116,7 +124,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisMyInventory);
 
 // Ordner Photo Album
-$PhotoAlbumuuid = uuidv4();
+$PhotoAlbumuuid = generateUUID();
 
 $verzeichnisPhotoAlbum = array();
 $verzeichnisPhotoAlbum['folderName'] = 'Photo Album';
@@ -130,7 +138,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisPhotoAlbum);
 
 // Ordner Clothing
-$Clothinguuid = uuidv4();
+$Clothinguuid = generateUUID();
 
 $verzeichnisClothing = array();
 $verzeichnisClothing['folderName'] = 'Clothing';
@@ -144,7 +152,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisClothing);
 
 // Ordner Objects
-$Objectsuuid = uuidv4();
+$Objectsuuid = generateUUID();
 
 $verzeichnisObjects = array();
 $verzeichnisObjects['folderName'] = 'Objects';
@@ -158,7 +166,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisObjects);
 
 // Ordner Notecards
-$Notecardsuuid = uuidv4();
+$Notecardsuuid = generateUUID();
 
 $verzeichnisNotecards = array();
 $verzeichnisNotecards['folderName'] = 'Notecards';
@@ -172,7 +180,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisNotecards);
 
 // Ordner Scripts
-$Scriptsuuid = uuidv4();
+$Scriptsuuid = generateUUID();
 
 $verzeichnisScripts = array();
 $verzeichnisScripts['folderName'] = 'Scripts';
@@ -186,7 +194,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisScripts);
 
 // Ordner Body Parts
-$BodyPartsuuid = uuidv4();
+$BodyPartsuuid = generateUUID();
 
 $verzeichnisBodyParts = array();
 $verzeichnisBodyParts['folderName'] = 'Body Parts';
@@ -200,7 +208,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisBodyParts);
 
 // Ordner Trash
-$Trashuuid = uuidv4();
+$Trashuuid = generateUUID();
 
 $verzeichnisTrash = array();
 $verzeichnisTrash['folderName'] = 'Trash';
@@ -214,7 +222,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisTrash);
 
 // Ordner Lost And Found
-$LostAndFounduuid = uuidv4();
+$LostAndFounduuid = generateUUID();
 
 $verzeichnisLostAndFound = array();
 $verzeichnisLostAndFound['folderName'] = 'Lost And Found';
@@ -228,7 +236,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisLostAndFound);
 
 // Ordner Animations
-$Animationsuuid = uuidv4();
+$Animationsuuid = generateUUID();
 
 $verzeichnisAnimations = array();
 $verzeichnisAnimations['folderName'] = 'Animations';
@@ -242,7 +250,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisAnimations);
 
 // Ordner Gestures
-$Gesturesuuid = uuidv4();
+$Gesturesuuid = generateUUID();
 
 $verzeichnisGestures = array();
 $verzeichnisGestures['folderName'] = 'Gestures';
@@ -257,7 +265,7 @@ $statement->execute($verzeichnisGestures);
 
 
 // Friends
-$Friendsuuid = uuidv4();
+$Friendsuuid = generateUUID();
 
 $verzeichnisFriends = array();
 $verzeichnisFriends['folderName'] = 'Friends';
@@ -271,7 +279,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisFriends);
 
 // Favorites
-$Favoritesuuid = uuidv4();
+$Favoritesuuid = generateUUID();
 
 $verzeichnisFavorites = array();
 $verzeichnisFavorites['folderName'] = 'Favorites';
@@ -285,7 +293,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisFavorites);
 
 // Current Outfit
-$CurrentOutfituuid = uuidv4();
+$CurrentOutfituuid = generateUUID();
 
 $verzeichnisCurrentOutfit = array();
 $verzeichnisCurrentOutfit['folderName'] = 'Current Outfit';
@@ -299,7 +307,7 @@ $statement = $pdo->prepare("INSERT INTO inventoryfolders (folderName, type, vers
 $statement->execute($verzeichnisCurrentOutfit);
 
 // All
-$Alluuid = uuidv4();
+$Alluuid = generateUUID();
 
 $verzeichnisAll = array();
 $verzeichnisAll['folderName'] = 'All';
