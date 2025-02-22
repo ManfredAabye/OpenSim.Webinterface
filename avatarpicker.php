@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['authenticated'] = true;
 
         if (!empty($vorname) && !empty($nachname)) {
-            $inventory = listinventar($vorname, $nachname, DB_USERNAME, DB_PASSWORD, DB_NAME);
+            $inventory = listinventar($conn, $vorname, $nachname);
         }
     } else {
         $error_message = "Falsches Passwort. Bitte versuchen Sie es erneut.";
@@ -40,50 +40,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $show_login_form = true;
 }
 
-function mariarest($username, $password, $databasename, $mariacommand) {
-    if (!shell_exec('command -v mariadb')) {
-        echo "Der MariaDB-Client ist nicht installiert. Bitte installieren Sie ihn zuerst.\n";
-        return 1;
-    }
-
-    if (func_num_args() != 4 || empty($username) || empty($password) || empty($databasename) || empty($mariacommand)) {
-        echo "All parameters must be provided and not empty.\n";
-        return 1;
-    }
-
-    $result_mariarest = shell_exec("echo \"$mariacommand;\" | MYSQL_PWD=$password mariadb -u$username $databasename -N 2>/dev/null");
-    return $result_mariarest;
-}
-
-function listinventar($vorname, $nachname, $db_username, $db_password, $db_name) {
+// Funktion zum Abrufen des Inventars
+function listinventar($conn, $vorname, $nachname) {
+    $vorname = $conn->real_escape_string(strip_tags($vorname));
+    $nachname = $conn->real_escape_string(strip_tags($nachname));
     $query = "SELECT PrincipalID FROM UserAccounts WHERE FirstName='$vorname' AND LastName='$nachname'";
-    $user_uuid = mariarest($db_username, $db_password, $db_name, $query);
-    $user_uuid = explode("\n", $user_uuid)[0];
-
-    if (empty($user_uuid)) {
+    $result = $conn->query($query);
+    
+    if ($result->num_rows == 0) {
         echo "Benutzer nicht gefunden.\n";
         return [];
     }
+    
+    $row = $result->fetch_assoc();
+    $user_uuid = $row['PrincipalID'];
 
     // Abfrage der "Outfits"-Ordner
-    $query = "SELECT folderID, folderName FROM inventoryfolders WHERE agentID='$user_uuid' AND folderName = 'Outfits'";
-    $inventory = mariarest($db_username, $db_password, $db_name, $query);
-    $inventory = array_map(function($item) {
-        $parts = explode("\t", trim($item));
-        return [
-            'folderID' => $parts[0] ?? '',
-            'folderName' => $parts[1] ?? ''
+    $query = "SELECT folderID, folderName FROM inventoryfolders WHERE agentID='$user_uuid' AND type=47 ORDER BY folderName ASC, agentID ASC";
+    $result = $conn->query($query);
+    $inventory = [];
+    
+    while ($row = $result->fetch_assoc()) {
+        $inventory[] = [
+            'folderID' => $row['folderID'],
+            'folderName' => $row['folderName']
         ];
-    }, explode("\n", trim($inventory)));
+    }
 
     if (empty($inventory)) {
         echo "Keine Outfits gefunden.\n";
-        return [];
     }
 
     return $inventory;
 }
 
+// Funktion zum Abrufen des Bildes nach Namen
 function getImageByName($dir, $name) {
     foreach (glob($dir."*.jpg") as $filename) {
         $file = pathinfo($filename, PATHINFO_FILENAME);
