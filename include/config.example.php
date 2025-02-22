@@ -10,14 +10,20 @@ define('DB_ASSET_NAME', 'your_database');
 define('BASE_URL', 'http://yourdomain.com');
 define('SITE_NAME', 'Dein Grid Name');
 
+// Konfigurationsoptionen Standart Template, W3 Template, Bootstrap5 Template.
+define('HEADER_FILE', 'headerST.php'); // Ändere diesen Wert, um unterschiedliche Header-Dateien zu laden möglich sind "headerST.php", "headerW3.php", "headerBT5.php"
+
 // Konfigurationsoption für den Banker
 define('BANKER_UUID', '00000000-0000-0000-0000-000000000000');
+
+// Verifizierungsfunktionen
+define('VERIFICATION_METHOD', 'email'); // 'email' oder 'uuid'
 
 // RemoteAdmin
 define('REMOTEADMIN_URL', 'localhost');
 define('REMOTEADMIN_PORT', 8002);
-define('REMOTEADMIN_HTTPAUTHUSERNAME', 'HTTPAUTHUSERNAME');
-define('REMOTEADMIN_HTTPAUTHPASSWORD', 'HTTPAUTHPASSWORD');
+define('REMOTEADMIN_HTTPAUTHUSERNAME', 'username');
+define('REMOTEADMIN_HTTPAUTHPASSWORD', 'password');
 
 // Asset Bilder
 define('ASSETPFAD', 'cache/');
@@ -48,21 +54,6 @@ $registration_passwords_picreader = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69
 $registration_passwords_mutelist = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 $registration_passwords_avatarpicker = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
 $registration_passwords_economy = ["Hg4uYW5KNXnZ6bdO", "nKpqLPWgZsW0HTYk", "69ElwyGunIRx1fum", "w1cQEOlB8xZmp9Aa", "jTLhMTU6Ags3oXqc"];
-
-// Weitere Seitenadressen
-// define('WELCOME_PAGE', BASE_URL . '/welcomesplashpage.php');
-// define('ECONOMY_PAGE', BASE_URL . '/economycashbook.php');
-// define('ABOUT_PAGE', BASE_URL . '/aboutinformation.php');
-// define('REGISTER_PAGE', BASE_URL . '/registeruser.php');
-// define('HELP_PAGE', BASE_URL . '/help.php');
-// define('PASSWORD_PAGE', BASE_URL . '/passwordreset.php');
-// define('AVATAR_PAGE', BASE_URL . '/avatarpicker.php');
-// define('GRIDSTATUS_PAGE', BASE_URL . '/gridstatus.php');
-// define('GRIDSTATUSRSS_PAGE', BASE_URL . '/gridstatusrss.php');
-// define('GUIDE_PAGE', BASE_URL . '/guide.php');
-// define('MAPTILE_PAGE', BASE_URL . '/maptile.php');
-// define('PARTNER_PAGE', BASE_URL . '/partner.php');
-// define('SEARCHSERVICE_PAGE', BASE_URL . '/searchservice.php');
 
 // Farben der Webseite
 $colorSchemes = array(
