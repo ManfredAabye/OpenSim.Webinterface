@@ -1,100 +1,38 @@
 <?php
+session_start(); // PHP-Session starten
+
 $title = "Register";
 include_once 'include/header.php';
 
-// UUID Generator Random UUID
-function uuidv4() {
+// Funktionen direkt in der Datei definieren
+function generateActivationCode() {
+    return bin2hex(random_bytes(16));
+}
+
+function sendVerificationEmail($email, $vorname, $nachname, $activationCode) {
+    $subject = "Ihr Freischaltcode für " . SITE_NAME;
+    $message = "Hallo $vorname $nachname,\n\n";
+    $message .= "Ihr Freischaltcode lautet: $activationCode\n\n";
+    $message .= "Bitte verwenden Sie diesen Code, um Ihre Registrierung abzuschließen.\n\n";
+    $message .= "Mit freundlichen Grüßen,\n";
+    $message .= SITE_NAME;
+
+    $headers = "From: noreply@" . parse_url(BASE_URL, PHP_URL_HOST) . "\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    return mail($email, $subject, $message, $headers);
+}
+
+function generateUUID() {
     return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-
-        // 32 bits
         mt_rand(0, 0xffff), mt_rand(0, 0xffff),
-
-        // 16 bits
         mt_rand(0, 0xffff),
-
-        // 16 bits
         mt_rand(0, 0x0fff) | 0x4000,
-
-        // 16 bits - 8 bits
         mt_rand(0, 0x3fff) | 0x8000,
-
-        // 48 bits
         mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
     );
 }
-// Generiere eine zufällige AntispamID
-$oscaptchaid = uuidv4();
-?>
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Register</title>
-
-    <style>
-        htmlBody {font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;} 
-        main {width: 50%; margin: 2em auto; padding: 2em; background-color: #ffffff; border: 1px solid #ccc; border-radius: 15px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);} 
-        h2 {color: #333;} 
-        form label {display: block; margin-bottom: 0.5em; color: #333;} 
-        form input[type="text"], form input[type="password"], form input[type="email"] {width: 100%; padding: 0.5em; margin-bottom: 1em; border: 1px solid #ccc; border-radius: 4px;} 
-        form input[type="submit"] {padding: 0.7em 2em; background-color: #007BFF; color: #ffffff; border: none; border-radius: 4px; cursor: pointer;} 
-        form input[type="submit"]:hover {background-color: #0056b3;}
-    </style>
-</head>
-<body>
-
-<main>
-    <h2>Avatar Registration</h2>
-
-    <?php 
-    if (!isset($_POST['postname'])):         
-    ?>
-
-    <form action="" method="post">
-        <input type="hidden" name="postname" value="1" />
-        <input type="hidden" name="oscaptchaid" value="<?php echo $oscaptchaid; ?>" />
-        
-        <div class="form-group">
-            <label for="base">Vorname:</label>
-            <input type="text" placeholder="John" name="osVorname" maxlength="40" />
-        </div>
-        
-        <div class="form-group">
-            <label for="base">Nachname:</label>
-            <input type="text" placeholder="Doe" name="osNachname" maxlength="40" />
-        </div>
-        
-        <div class="form-group">
-            <label for="osEMail">E-Mail:</label>
-            <input type="text" placeholder="john@doe.com" name="osEMail" maxlength="40" />
-        </div>
-        
-        <div class="form-group">
-            <label for="osPasswd1">Password:</label>
-            <input type="password" placeholder="*********" name="osPasswd1" maxlength="40" />
-        </div>
-        
-        <div class="form-group">
-            <label for="osPasswd">Password wiederholung:</label>
-            <input type="password" placeholder="*********" name="osPasswd" maxlength="40" />
-        </div>
-        
-<!-- todo: AntispamID sollte gegen E-Mail Freischaltcode ausgetauscht werden oder wahlweise über config auswählbar gemacht werden. -->
-        <div class="form-group">
-            <label for="osPasswd">AntispamID bitte ohne leerzeichen kopieren: <?php echo $oscaptchaid; ?> : Ende</label>
-            <input type="text" placeholder="AntispamID bitte hier einfügen" name="oscaptcha" maxlength="36" />
-        </div>
-
-        <div class="form-group">
-            <input type="submit" name="submit" value="Registration">
-        </div>
-    </form>
-
-    <?php endif ?>
-
-</main>
-
-<?php
 // Salt erstellen
 function ospswdsalt() {
     global $benutzeruuid;
@@ -108,95 +46,167 @@ function ospswdhash($osPasswd, $osSalt) {
     return md5(md5($osPasswd) . ":" . $osSalt);
 }
 
-if (isset($_POST['postname']) && $_POST['postname'] == 1) {    
- 
-    // wir schaffen unsere Variablen und alle Leerzeichen beiläufig entfernen
-    $benutzeruuid = uuidv4();
-    $inventoryuuid = uuidv4();
-    $neuparentFolderID = uuidv4();
-    $neuHauptFolderID = uuidv4();
-    $oscaptchaid = $_POST['oscaptchaid'];
+// Überprüfen, ob das Formular abgesendet wurde
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['submit_card1'])) {
+        // Daten aus Card1 speichern
+        $_SESSION['osVorname'] = trim($_POST['osVorname']);
+        $_SESSION['osNachname'] = trim($_POST['osNachname']);
+        $_SESSION['osEMail'] = trim($_POST['osEMail']);
+        $_SESSION['osPasswd'] = trim($_POST['osPasswd']);
+        $_SESSION['osPasswd1'] = trim($_POST['osPasswd1']);
 
-    $osVorname = trim($_POST['osVorname']);
-    $osNachname = trim($_POST['osNachname']);
-    $osEMail = trim($_POST['osEMail']);
-
-    $osDatum = time();    
-    $osPasswd = trim($_POST['osPasswd']);
-    $osPasswd1 = trim($_POST['osPasswd1']);
-    $oscaptcha = trim($_POST['oscaptcha']);
-
-    $osSalt = ospswdsalt();
-    $osHash = ospswdhash($osPasswd, $osSalt);
-
-    // Programmabbruch bei fehlenden Angaben
-    if (empty($osVorname)) {
-        echo 'Vorname nicht mit einem Wert belegt, oder nicht gesetzt<br>';
-        exit;
-    }
-    if (empty($osNachname)) {
-        echo 'Nachname nicht mit einem Wert belegt, oder nicht gesetzt<br>';
-        exit;
-    }
-    if (empty($osEMail)) {
-        echo 'E-Mail nicht mit einem Wert belegt, oder nicht gesetzt<br>';
-        exit;
-    }
-    if (empty($osPasswd)) {
-        echo 'Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht gesetzt<br>';
-        exit;
-    }
-    if (empty($osPasswd1)) {
-        echo 'Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht gesetzt<br>';
-        exit;
-    }
-    if ($osPasswd != $osPasswd1) {
-        echo 'Die Passwörter müssen übereinstimmen<br>';
-        exit;
-    }
-    if ($oscaptcha != $oscaptchaid) {
-        echo 'Captcha Fehler: ' . $oscaptcha . '   Richtig wäre: ' . $oscaptchaid;
-        exit;
-    }
-
-    // Datenbank öffnen
-    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Avatar und Namen checken
-    if (!$error) {
-        $statement = $pdo->prepare("SELECT * FROM UserAccounts WHERE FirstName = :FirstName AND LastName = :LastName");
-        $result = $statement->execute(array('FirstName' => $osVorname, 'LastName' => $osNachname));
-        $user = $statement->fetch();
-        if ($user !== false) {
-            echo 'Der Name ist bereits vergeben<br>';
+        // Validierungen für Card1
+        if (empty($_SESSION['osVorname']) || empty($_SESSION['osNachname']) || empty($_SESSION['osEMail']) || empty($_SESSION['osPasswd']) || empty($_SESSION['osPasswd1'])) {
+            echo "Bitte füllen Sie alle Felder aus.";
             exit;
         }
-    }
-
-    // E-Mail checken
-    if (!filter_var($osEMail, FILTER_VALIDATE_EMAIL)) {
-        echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
-        exit;
-    }
-    // Überprüfe, ob die E-Mail-Adresse noch nicht registriert wurde
-    if (!$error) {
-        $statement = $pdo->prepare("SELECT * FROM UserAccounts WHERE Email = :Email");
-        $result = $statement->execute(array('Email' => $osEMail));
-        $user = $statement->fetch();
-        if ($user !== false) {
-            echo 'Diese E-Mail-Adresse ist bereits vergeben<br>';
+        if ($_SESSION['osPasswd'] != $_SESSION['osPasswd1']) {
+            echo "Die Passwörter müssen übereinstimmen.";
             exit;
         }
+
+        // Freischaltcode generieren und per E-Mail senden
+        $activationCode = generateActivationCode();
+        $_SESSION['activationCode'] = $activationCode; // Freischaltcode in der Session speichern
+
+        if (!sendVerificationEmail($_SESSION['osEMail'], $_SESSION['osVorname'], $_SESSION['osNachname'], $activationCode)) {
+            echo "Fehler beim Senden der E-Mail.";
+            exit;
+        }
+
+        // Card1 ausblenden und Card2 anzeigen
+        $showCard1 = false;
+        $showCard2 = true;
+    } elseif (isset($_POST['submit_card2'])) {
+        // Überprüfen des Freischaltcodes
+        $enteredCode = trim($_POST['activationCode']);
+
+        if ($enteredCode === $_SESSION['activationCode']) {
+            // Freischaltcode ist korrekt, fahre mit der Registrierung fort
+
+            // Variablen aus der Session holen
+            $osVorname = $_SESSION['osVorname'];
+            $osNachname = $_SESSION['osNachname'];
+            $osEMail = $_SESSION['osEMail'];
+            $osPasswd = $_SESSION['osPasswd'];
+
+            // UUIDs generieren
+            $benutzeruuid = generateUUID();
+            $inventoryuuid = generateUUID();
+            $neuparentFolderID = generateUUID();
+            $neuHauptFolderID = generateUUID();
+
+            // Salt und Hash generieren
+            $osSalt = ospswdsalt();
+            $osHash = ospswdhash($osPasswd, $osSalt);
+
+            // Zeitstempel erstellen
+            $osDatum = time();
+
+            // Datenbankverbindung herstellen
+            $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Datenbankzugriffe in createavatarfunc.php durchführen
+            include_once("include/createavatarfunc.php");
+
+            // Erfolgsmeldung anzeigen
+            echo "Registrierung erfolgreich abgeschlossen!";
+        } else {
+            echo "Ungültiger Freischaltcode. Bitte versuchen Sie es erneut.";
+        }
     }
-
-    // Die Datenbank zugriffe sind in der Datei createavatarfunc.php
-    include_once("include/createavatarfunc.php");
-
-    // Avatar Fertig Verbindung schließen
-    $pdo = null;
+} else {
+    // Standardmäßig Card1 anzeigen
+    $showCard1 = true;
+    $showCard2 = false;
 }
 ?>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <style>
+        htmlBody {font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;} 
+        .card1, .card2 {
+            width: 50%; 
+            margin: 2em auto; 
+            padding: 2em; 
+            background-color: #ffffff; 
+            border: 1px solid #ccc; 
+            border-radius: 15px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {color: #333;} 
+        form label {display: block; margin-bottom: 0.5em; color: #333;} 
+        form input[type="text"], form input[type="password"], form input[type="email"] {
+            width: 100%; 
+            padding: 0.5em; 
+            margin-bottom: 1em; 
+            border: 1px solid #ccc; 
+            border-radius: 4px;
+        } 
+        form input[type="submit"] {
+            padding: 0.7em 2em; 
+            background-color: #007BFF; 
+            color: #ffffff; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+        } 
+        form input[type="submit"]:hover {background-color: #0056b3;}
+    </style>
+</head>
+<body>
+
+<main>
+    <!-- Card1: Eingabe von Vorname, Nachname, E-Mail, Passwort und Passwortwiederholung -->
+    <div class="card1" style="display: <?php echo $showCard1 ? 'block' : 'none'; ?>;">
+        <h2>Registrierung - Schritt 1</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="osVorname">Vorname:</label>
+                <input type="text" name="osVorname" placeholder="John" maxlength="40" required />
+            </div>
+            <div class="form-group">
+                <label for="osNachname">Nachname:</label>
+                <input type="text" name="osNachname" placeholder="Doe" maxlength="40" required />
+            </div>
+            <div class="form-group">
+                <label for="osEMail">E-Mail:</label>
+                <input type="email" name="osEMail" placeholder="john@doe.com" maxlength="40" required />
+            </div>
+            <div class="form-group">
+                <label for="osPasswd">Passwort:</label>
+                <input type="password" name="osPasswd" placeholder="*********" maxlength="40" required />
+            </div>
+            <div class="form-group">
+                <label for="osPasswd1">Passwort wiederholen:</label>
+                <input type="password" name="osPasswd1" placeholder="*********" maxlength="40" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit_card1" value="Senden">
+            </div>
+        </form>
+    </div>
+
+    <!-- Card2: Eingabe des Freischaltcodes -->
+    <div class="card2" style="display: <?php echo $showCard2 ? 'block' : 'none'; ?>;">
+        <h2>Registrierung - Schritt 2</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="activationCode">Freischaltcode aus der E-Mail:</label>
+                <input type="text" name="activationCode" placeholder="Freischaltcode eingeben" maxlength="36" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit_card2" value="Registrieren">
+            </div>
+        </form>
+    </div>
+</main>
+
 </body>
 </html>
 <?php include_once 'include/footer.php'; ?>
