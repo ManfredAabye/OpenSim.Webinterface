@@ -81,6 +81,13 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## TODO
 
+22.02.2025
+
+createavatar.php - sendet eine Registrierungs-UUID per E-Mail an die angegebene Adresse des neuen Benutzers. Der Prozess wartet auf die korrekte Eingabe der UUID, bevor der Benutzer registriert wird. Dabei muss die E-Mail-Adresse eindeutig sein.
+
+passwordreset.php - sendet eine Bestätigungs-UUID per E-Mail an die Adresse des Benutzers. Der Prozess wartet auf die korrekte Eingabe der UUID, bevor das Passwort des Benutzers zurückgesetzt wird.
+
+
 21.02.2025 Avatar Registration funktioniert jetzt soweit und neues Passwort setzen funktioniert teilweise.
 
 14.02.2025 Mit der neuen guide.php lassen sich ausgesuchte Regionen präsentieren, alle Regionen im Grid anwählen, bis zu 293 Grids direkt hin teleportieren.
