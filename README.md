@@ -1,5 +1,5 @@
 # OpenSim.Webinterface
-Webinterface PHP 8.3
+Webinterface/Webseiten für den OpenSimulator in PHP 8.3
 
 Hier entsteht ein Webinterface für den OpenSimulator dieser ist noch nicht voll funktionsfähig.
 
