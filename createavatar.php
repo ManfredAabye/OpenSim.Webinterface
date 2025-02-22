@@ -4,6 +4,39 @@ session_start(); // PHP-Session starten
 $title = "Register";
 include_once 'include/header.php';
 
+// Liste bekannter Wegwerf-Domains
+$disposable_domains = [
+    'maildrop.cc',
+    'discard.email',
+    'fakeinbox.org',
+    'disposableemailaddresses:email.co.uk',
+    'temp-mail.ru',
+    'mytrashmail.com',
+    'getairmail.net',
+    'trash-mail.de',
+    'trashmail.me',
+    'mail-temporaire.fr',
+    'nada.email',
+    'tempinbox.xyz',
+    'spambog.com',
+    'spambox.us',
+    'anonbox.net',
+    'mail.kz',
+    'temp-mail.org',
+    'luxusmail.ru',
+    // Weitere Domains hinzufügen
+];
+
+// Liste unerwünschter TLDs
+$blocked_tlds = ['com', 'cn', 'ru', 'pl'];
+
+// Funktion zur Überprüfung, ob eine E-Mail-Adresse von einer Wegwerf-Domain oder unerwünschten TLD stammt
+function is_disposable_email($email, $disposable_domains, $blocked_tlds) {
+    $domain = substr(strrchr($email, "@"), 1);
+    $tld = substr(strrchr($domain, "."), 1);
+    return in_array($domain, $disposable_domains) || in_array($tld, $blocked_tlds);
+}
+
 // Funktionen direkt in der Datei definieren
 function generateActivationCode() {
     return bin2hex(random_bytes(16));
@@ -63,6 +96,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         if ($_SESSION['osPasswd'] != $_SESSION['osPasswd1']) {
             echo "Die Passwörter müssen übereinstimmen.";
+            exit;
+        }
+        if (is_disposable_email($_SESSION['osEMail'], $disposable_domains, $blocked_tlds)) {
+            echo "Bitte verwenden Sie keine Wegwerf-E-Mail-Adresse oder eine E-Mail-Adresse mit einer gesperrten Domain.";
             exit;
         }
 
