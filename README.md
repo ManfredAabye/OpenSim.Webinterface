@@ -83,6 +83,8 @@ Economy support is no longer required, but I would like to provide a small overv
 
 22.02.2025
 
+3 Templates sind verfügbar, Bootstrap5 und W3.css wurden hinzugefügt, es ist einstellbar in der config.php.
+
 createavatar.php - sendet eine Registrierungs-UUID per E-Mail an die angegebene Adresse des neuen Benutzers. Der Prozess wartet auf die korrekte Eingabe der UUID, bevor der Benutzer registriert wird. Dabei muss die E-Mail-Adresse eindeutig sein.
 
 passwordreset.php - sendet eine Bestätigungs-UUID per E-Mail an die Adresse des Benutzers. Der Prozess wartet auf die korrekte Eingabe der UUID, bevor das Passwort des Benutzers zurückgesetzt wird.
