@@ -81,9 +81,14 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## TODO
 
-23.02.2025 Es sind jetzt 10 Frameworks zum testen drin: "headerST.php", "headerW3.php", "headerBT5.php", "headerFoundation.php", "headerMaterialize.php", "headerTailwind.php",  "headerPrimer.php", "headerTachyons.php", "headerSpectre.php", "headerTent.php".
+* 23.02.2025 
+Es sind jetzt 10 Frameworks zum testen drin:
 
-22.02.2025
+"headerST.php", "headerW3.php", "headerBT5.php", "headerFoundation.php", "headerMaterialize.php", "headerTailwind.php",  "headerPrimer.php", "headerTachyons.php", "headerSpectre.php", "headerTent.php".
+
+Diese sind in der config.php einstellbar.
+
+* 22.02.2025
 
 3 Templates sind verfügbar, Bootstrap5 und W3.css wurden hinzugefügt, es ist einstellbar in der config.php.
 
@@ -92,27 +97,14 @@ createavatar.php - sendet eine Registrierungs-UUID per E-Mail an die angegebene 
 passwordreset.php - sendet eine Bestätigungs-UUID per E-Mail an die Adresse des Benutzers. Der Prozess wartet auf die korrekte Eingabe der UUID, bevor das Passwort des Benutzers zurückgesetzt wird.
 
 
-21.02.2025 Avatar Registration funktioniert jetzt soweit und neues Passwort setzen funktioniert teilweise.
+* 21.02.2025 Avatar Registration funktioniert jetzt soweit und neues Passwort setzen funktioniert teilweise.
 
-14.02.2025 Mit der neuen guide.php lassen sich ausgesuchte Regionen präsentieren, alle Regionen im Grid anwählen, bis zu 293 Grids direkt hin teleportieren.
+* 14.02.2025 Mit der neuen guide.php lassen sich ausgesuchte Regionen präsentieren, alle Regionen im Grid anwählen, bis zu 293 Grids direkt hin teleportieren.
 
-14.02.2025 With the new guide.php you can present selected regions, select all regions in the grid, and teleport directly to up to 293 grids.
+* 14.02.2025 With the new guide.php you can present selected regions, select all regions in the grid, and teleport directly to up to 293 grids.
 
-09.02.2025 Farbspielerei eingefügt.
+* 09.02.2025 Farbspielerei eingefügt.
 
-10.02.2025 Alles überarbeitet, Passwortgenerator hinzugefügt, über 700 Fehler beseitigt.
-
-* MapTileURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/maptile.php" ; **Funktioniert**
-* SearchURL = "${Const|BaseURL}:${Const|PublicPort}/webinterface/searchservice.php" ; **Funktioniert**
-* DestinationGuide = "${Const|BaseURL}/webinterface/guide.php" ; **Funktioniert**
-* AvatarPicker = "${Const|BaseURL}/webinterface/avatarpicker.php" ; **Funktioniert noch nicht es gibt eine Platzhalter Datei.**
-* welcome = ${Const|BaseURL}/webinterface/welcomesplashpage.php ; **Funktioniert**
-* economy = ${Const|BaseURL}:8008/ ; **Funktioniert ist aber im neuen dotnet MoneyServer von mir.**
-* about = ${Const|BaseURL}/webinterface/aboutinformation.php ; **Funktioniert**
-* register = ${Const|BaseURL}/webinterface/registeruser.php ; **Funktioniert**
-* help = ${Const|BaseURL}/webinterface/help.php ; **Funktioniert**
-* password = ${Const|BaseURL}/webinterface/passwordreset.php ; **Funktioniert**
-* partner = ${Const|BaseURL}/webinterface/partner.php ; **Funktioniert**
-* GridStatus = ${Const|BaseURL}:${Const|PublicPort}/webinterface/gridstatus.php ; **Funktioniert**
+* 10.02.2025 Alles überarbeitet, Passwortgenerator hinzugefügt, über 700 Fehler beseitigt.
 
 ---
