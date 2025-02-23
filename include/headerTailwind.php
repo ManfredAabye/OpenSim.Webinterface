@@ -1,15 +1,16 @@
 <?php
 require_once 'config.php';
+// Tailwind CSS Framework
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
+<link rel="icon" type="image/x-icon" href="include/favicon.ico">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
-    <link rel="icon" type="image/x-icon" href="include/favicon.ico">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             font-family: <?php echo FONT_FAMILY; ?>;
@@ -39,6 +40,11 @@ require_once 'config.php';
             width: 100%;
             bottom: 0;
             line-height: 0;
+        }
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
         }
         .container {
             background-image: url(<?php echo FOREGROUND_IMAGE; ?>);
@@ -79,33 +85,23 @@ require_once 'config.php';
             setColorScheme('<?php echo INITIAL_COLOR_SCHEME; ?>');
         });
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-<header class="bg-primary text-white p-3">
+<body class="bg-secondary-color text-primary-color">
+<header class="bg-header-color p-4 text-center text-white">
     <h1>Welcome to <?php echo SITE_NAME; ?></h1>
 </header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="index.php"><?php echo SITE_NAME; ?></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <?php if (SHOW_COLOR_BUTTONS): ?>
-                    <?php foreach ($colorSchemes as $scheme => $colors): ?>
-                        <li class="nav-item">
-                            <button class="btn btn-sm btn-secondary color-button" data-scheme="<?php echo $scheme; ?>" style="background-color: <?php echo $colors['header']; ?>;"><?php echo ucfirst($scheme); ?></button>
-                        </li>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </ul>
-        </div>
+<nav class="bg-header-color p-4 text-center">
+    <div>
+    <?php if (SHOW_COLOR_BUTTONS): ?>
+        <?php foreach ($colorSchemes as $scheme => $colors): ?>
+            <button class="color-button bg-primary-color text-white m-2 p-2 rounded" data-scheme="<?php echo $scheme; ?>" style="background-color: <?php echo $colors['header']; ?>;"><?php echo ucfirst($scheme); ?></button>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </div>
 </nav>
-<div class="container mt-5">
-    <!-- Inhalt der Seite -->
-</div>
-<footer class="bg-dark text-white text-center py-3">
-    &copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>
+
+<footer class="bg-footer-color p-4 text-center text-white">
+    <p>&copy; <?php echo date("Y"); ?> <?php echo SITE_NAME; ?>. Alle Rechte vorbehalten.</p>    
 </footer>
 </body>
 </html>

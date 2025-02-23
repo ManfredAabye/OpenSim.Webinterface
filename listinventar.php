@@ -123,5 +123,4 @@ function listinventar($vorname, $nachname, $db_username, $db_password, $db_name)
             <?php endif; ?>
         </div>
     </main>
-    <?php include_once 'include/footer.php'; ?>
 </div>

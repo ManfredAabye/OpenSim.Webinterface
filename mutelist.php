@@ -3,7 +3,6 @@ session_start();
 
 $title = "Stummschaltungs-Verwaltung";
 include_once 'include/header.php';
-include_once 'config.php'; // Einbinden der config.php
 
 // Fehlerberichterstattung aktivieren
 error_reporting(E_ALL);
@@ -152,5 +151,4 @@ if ($_SESSION['authenticated'] ?? false) {
             <?php endif; ?>
         </div>
     </main>
-    <?php include_once 'include/footer.php'; ?>
 </div>

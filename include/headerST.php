@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+require_once 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -103,5 +103,10 @@ include 'config.php';
     <!-- Inhalt der Seite -->
 </div>
 
+</body>
+</html>
+<footer>
+    <p>&copy; <?php echo date("Y"); ?> <?php echo SITE_NAME; ?>. Alle Rechte vorbehalten.</p>    
+</footer>
 </body>
 </html>

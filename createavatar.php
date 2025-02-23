@@ -246,4 +246,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
-<?php include_once 'include/footer.php'; ?>

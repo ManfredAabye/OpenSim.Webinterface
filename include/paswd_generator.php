@@ -58,4 +58,4 @@ $registration_passwords_economy = [generatePassword(), generatePassword(), gener
     </pre>
 </main>
 </html>
-<?php include_once 'footer.php'; ?>
+

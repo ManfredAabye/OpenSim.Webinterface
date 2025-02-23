@@ -165,5 +165,3 @@ function hideCard() {
     });
 }
 </script>
-
-<?php include_once 'include/footer.php'; ?>

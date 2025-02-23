@@ -136,5 +136,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 $conn->close();
 $conn_assets->close();
-include 'include/footer.php';
 ?>

@@ -106,4 +106,3 @@ include_once 'include/header.php';
     </p>
 </main>
 <br><br><br><br>
-<?php include_once 'include/footer.php'; ?>

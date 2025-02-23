@@ -88,4 +88,3 @@ th, td {padding: 8px; text-align: left;}
     ?>
 </main>
 
-<?php include_once 'include/footer.php'; ?>

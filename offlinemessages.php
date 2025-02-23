@@ -80,7 +80,3 @@ include_once "include/config.php";
     }
     ?>
 </div>
-
-<?php
-include_once "include/footer.php"; // Falls ein Footer vorhanden ist
-?>

@@ -66,7 +66,3 @@ include_once "include/header.php";
     }
     ?>
 </div>
-
-<?php
-include_once "include/footer.php"; // Falls ein Footer vorhanden ist
-?>

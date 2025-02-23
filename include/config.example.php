@@ -10,8 +10,22 @@ define('DB_ASSET_NAME', 'your_database');
 define('BASE_URL', 'http://yourdomain.com');
 define('SITE_NAME', 'Dein Grid Name');
 
-// Konfigurationsoptionen Standart Template, W3 Template, Bootstrap5 Template.
-define('HEADER_FILE', 'headerST.php'); // Ändere diesen Wert, um unterschiedliche Header-Dateien zu laden möglich sind "headerST.php", "headerW3.php", "headerBT5.php"
+// Konfigurieren sie ihre Robust.ini wie folgt:
+//
+// MessageURI = "${Const|BaseURL}/messages.php";
+// welcome = ${Const|BaseURL}/welcomesplashpage.php
+// economy = ${Const|BaseURL}:8008/
+// about = ${Const|BaseURL}/aboutinformation.php
+// register = ${Const|BaseURL}/createavatar.php
+// help = ${Const|BaseURL}/help.php
+// password = ${Const|BaseURL}/passwordreset.php
+// partner = ${Const|BaseURL}/partner.php
+// GridStatus = ${Const|BaseURL}:${Const|PublicPort}/gridstatus.php
+// GridStatusRSS = ${Const|BaseURL}:${Const|PublicPort}/gridstatusrss.php
+
+// Konfigurationsoptionen Standart Template:
+// "headerST.php", "headerW3.php", "headerBT5.php", "headerFoundation.php", "headerMaterialize.php", "headerTailwind.php",  "headerPrimer.php", "headerTachyons.php", "headerSpectre.php", "headerTent.php"
+define('HEADER_FILE', 'headerST.php'); // Ändere diesen Wert, um die verschienen Template Header Datei zu laden.
 
 // Konfigurationsoption für den Banker
 define('BANKER_UUID', '00000000-0000-0000-0000-000000000000');

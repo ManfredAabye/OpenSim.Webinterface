@@ -178,4 +178,3 @@ $finalHTML = simpleMarkdownToHTML($tosText);
 echo "<div class='markdown-content'>$finalHTML</div>";
 ?>
 <br><br><br><br>
-<?php include 'footer.php'; ?>

@@ -135,5 +135,4 @@ function loadiar($vorname, $nachname, $passwort, $datei, $dateiname) {
             </form>
         </div>
     </main>
-    <?php include_once 'include/footer.php'; ?>
 </div>

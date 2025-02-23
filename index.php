@@ -36,7 +36,7 @@
         <li><a href="partner.php">Partner Page</a></li>
         <li><a href="passwordreset.php">Password Page</a></li>
         <li><a href="picreader.php">Picreader Page</a></li>
-        <li><a href="registeruser.php">Register Page</a></li>
+        <li><a href="createavatar.php">Register Page</a></li>
         <li><a href="searchservice.php">Search Page</a></li>
         <li><a href="tabledata.php">Tabledata Page</a></li>
         <li><a href="welcomesplashpage.php">Welcome Page</a></li>
@@ -45,4 +45,3 @@
     </ul>
 </main>
 
-<?php include_once('include/footer.php'); ?>

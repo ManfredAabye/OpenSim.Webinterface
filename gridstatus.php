@@ -116,4 +116,3 @@ function setTags() {
     <div id="chart_div"></div>
 </body>
 
-<?php include_once 'include/footer.php'; ?>

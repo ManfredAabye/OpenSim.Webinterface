@@ -66,4 +66,3 @@ $txt2 = GRID_PORT;
 <br><br><br><br>
 </main>
 
-<?php include_once 'include/footer.php'; ?>

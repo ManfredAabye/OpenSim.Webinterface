@@ -85,4 +85,3 @@ form input[type="submit"]:hover {background-color: #0056b3;}
     </form>
 </main>
 
-<?php include_once 'include/footer.php'; ?>

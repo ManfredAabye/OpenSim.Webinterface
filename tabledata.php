@@ -206,5 +206,4 @@ $data_result = $data_stmt->get_result();
 <?php
 $data_stmt->close();
 $conn->close();
-include 'include/footer.php';
 ?>

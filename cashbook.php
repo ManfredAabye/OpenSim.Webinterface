@@ -141,7 +141,7 @@ $transactions_result = $conn->query($transactions_query);
         </div>
     </main>
 
-    <?php include_once 'include/footer.php'; ?>
+
 </div>
 
 <script>
@@ -152,4 +152,3 @@ function filterUsers() {
     });
 }
 </script>
-<?php include_once 'include/footer.php'; ?>

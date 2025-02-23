@@ -1,7 +1,7 @@
 <?php
 $title = "GridStatusRSS";
 include_once 'include/header.php';
-include_once 'config.php'; // Konfigurationsdatei einbinden
+//include_once 'config.php'; // Konfigurationsdatei einbinden
 
 // Cache-Dateipfad
 $feedcache_path = __DIR__.'/feed_cache.html';
@@ -42,4 +42,3 @@ if (!file_exists($feedcache_path) or filemtime($feedcache_path) < (time() - $fee
 }
 ?>
 <br><br><br><br>
-<?php include_once 'include/footer.php'; ?>

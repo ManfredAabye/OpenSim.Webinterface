@@ -42,11 +42,11 @@ function stopAudio() {
 
 function fetchMetadata() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'getMetadata.php', true); // PHP-Datei aufrufen
+    xhr.open('GET', 'http://schwarze-welle.de:7500/status-json.xsl', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var data = JSON.parse(xhr.responseText);
-            document.getElementById('metadata').innerText = 'Now Playing: ' + data.title;
+            document.getElementById('metadata').innerText = 'Now Playing: ' + data.icestats.source.title;
         }
     };
     xhr.send();
@@ -55,5 +55,3 @@ function fetchMetadata() {
 setInterval(fetchMetadata, 10000);
 fetchMetadata(); // Initialer Aufruf
 </script>
-
-<?php include_once 'include/footer.php'; ?>
