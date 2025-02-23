@@ -81,6 +81,8 @@ Economy support is no longer required, but I would like to provide a small overv
 
 ## TODO
 
+23.02.2025 Es sind jetzt 10 Frameworks zum testen drin: "headerST.php", "headerW3.php", "headerBT5.php", "headerFoundation.php", "headerMaterialize.php", "headerTailwind.php",  "headerPrimer.php", "headerTachyons.php", "headerSpectre.php", "headerTent.php".
+
 22.02.2025
 
 3 Templates sind verfügbar, Bootstrap5 und W3.css wurden hinzugefügt, es ist einstellbar in der config.php.
